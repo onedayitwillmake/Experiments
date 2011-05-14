@@ -1,3 +1,4 @@
+// Lots of 'trying out stuff' below, so view at your own peril
 (function(){
 	CanvasPS3 = (typeof CanvasPS3 === 'undefined') ? {} : CanvasPS3;
 	var onLoad = function( event ) {
@@ -13,73 +14,53 @@
 
 
 		var t = Math.random() * 1000;
-		var tn = 0;
-		var n = 8;
+		var tn = Math.random() * 1000;
 
 		// Loop
 		(function loop() {
-
-// 			context.globalCompositeOperation = "source-over";
 			// Clear top
-			context.fillStyle = "rgba(0, 0, 0,0.005)";
-			context.fillRect(0, 0, canvas.width, canvas.height);
-			context.globalCompositeOperation = "lighter";
-
-
-			context.save();
-			context.translate(0, canvas.height/2);
 			var points = [];
-			var pointCount = 8;
-			var rise = 400;
-			var lineWidth = canvas.width;
-			points[ 0 ] = {x: canvas.width+100, y:0};
-			for ( var i = 1; i < pointCount; i++ ) {
-				var noise = CanvasPS3.noise( i * 0.3 + tn, t, t*0.2);
-				var nX = lineWidth-(i/pointCount * lineWidth);
+			var pointCount = 50;
+			var rise = canvas.height*0.4;
+			var lineWidth = (canvas.width+200)/pointCount;
+			for ( var i = 0; i < pointCount; i++ ) {
+				var noise = CanvasPS3.noise( i * 0.05 + tn, t, tn);
+				var nX = i*lineWidth + Math.sin(noise)*5;
 				var nY = noise * rise - (rise*0.5) + 200;
 				points[ i ] = { x: Math.floor(nX), y: Math.floor(nY) };
 			}
-			points[ i ] = {x: -100, y:0};
+			points[ i ] = {x: canvas.width+200, y:0};
 
 			var spline = new Spline();
 			var position = spline.get2DPoint( points, 0);
-			var oldPosition = points[0];
-			var smoothing = 8;
+			var oldPosition = {x: position.x, y: position.y};
 			var previousMidpoint = null;
 			
+			// Slowly erase
+			context.fillStyle = "rgba(0, 0, 0,0.004)";
+			context.fillRect(0, 0, canvas.width, canvas.height);
+			context.save();
+			context.translate(0, canvas.height/2);
+			for(i = 0; i < points.length; ++i) {
+				var hsv = CanvasPS3.HSVRGB((t*360*0.15) % 360, 60, 80);
+				position = spline.get2DPoint( points, i/pointCount );
 
-			for(i = 0; i < pointCount*smoothing; ++i) {
-				var hsv = CanvasPS3.HSVRGB((t*360*0.5) % 360, 50, 100);
-				position = spline.get2DPoint( points, i/(pointCount*smoothing) );
-				
-				// context.moveTo( oldPosition.x, oldPosition.y );
-				//context.lineTo( position.x, position.y );
-				// Midpoint
-				var point = {x:oldPosition.x + (position.x - oldPosition.x) * .5,
-							y: oldPosition.y + (position.y - oldPosition.y) * .5};
-
-			
-				context.strokeStyle = "rgba(" + hsv[0] + "," + hsv[1] +"," + hsv[2] + "," + 0.1 + ")";
+				context.strokeStyle = "rgba(" + hsv[0] + "," + hsv[1] +"," + hsv[2] + "," + 0.2 + ")";
 				context.beginPath();
-				var oldPosition = oldPosition,
-					position = position;
 
 				// Midpoint
 				var midpoint = {x:oldPosition.x + (position.x - oldPosition.x) * .5,
 							y: oldPosition.y + (position.y - oldPosition.y) * .5};
 
-
-				/**
-				 * Draw a quadratic bezier curve to the next point in the path
-				 */
-				if(previousMidpoint) // All except the first one
- 				{
- 					context.moveTo(previousMidpoint.x, previousMidpoint.y);
- 					context.quadraticCurveTo(oldPosition.x, oldPosition.y,midpoint.x, midpoint.y);
- 				} else {
- 					context.moveTo(oldPosition.x, oldPosition.y);
- 					context.lineTo(midpoint.x, midpoint.y);
- 				}
+				//  Draw a quadratic bezier curve to the next point in the path
+//				if(previousMidpoint) {
+// 					context.moveTo(previousMidpoint.x, previousMidpoint.y);
+// 					context.quadraticCurveTo(oldPosition.x, oldPosition.y,midpoint.x, midpoint.y);
+// 				} else {
+//
+// 				}
+				context.moveTo(oldPosition.x, oldPosition.y);
+				context.lineTo(position.x, position.y);
 				context.closePath();
 				context.stroke();
 				
@@ -89,12 +70,20 @@
 			}
 			context.restore();
 			t += 0.005;
-			tn += 0.01;
+			tn += 0.004;
 			// Loop
 			window.requestAnimationFrame( loop, null );
 		})();
 	};
 
+	function update() {
+	
+	};
+	
+	function draw() {
+	
+	}
+	
 	function Spline() {
 
 		var c = [], v2 = { x: 0, y: 0 },
