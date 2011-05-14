@@ -1,7 +1,5 @@
 // Lots of 'trying out stuff' below, so view at your own peril
 (function(){
-	var MOUSEX = 100;
-	var MOUSEY = 100;
 	var onLoad = function( event ) {
 		// Create canvas element
 		var canvas = document.createElement('canvas');
@@ -120,14 +118,11 @@
 		},
 
 		updateGrids: function() {
-			var i = 0;
-			var j = 0;
-			for(; i < Sketch.Fluid.prototype.NUM_GRIDS; ++i) {
-				for(; j < Sketch.Fluid.prototype.NUM_GRIDS; ++j) {
-					this._grids[i][j]._particles = [];
-					this._grids[i][j]._numParticles = 0;
-				}
-			}
+			var i;
+            var j;
+            for(i = 0; i < Sketch.Fluid.prototype.NUM_GRIDS; i++)
+                for(j = 0; j < Sketch.Fluid.prototype.NUM_GRIDS; j++)
+                   this._grids[i][j].numParticles = 0;
 
 			for( i = 0; i < this._numParticles; ++i ) {
 				var p = this._particles[i];
@@ -166,16 +161,16 @@
 		},
 
 		findNeighborsInGrid: function( pi, g ) {
-			for(var j = 0; j < g._numParticles; ++j) {
-				var pj = g._particles[j];
-				var distance = (pi.x - pj.x) * (pi.x - pj.x) + (pi.y - pj.y) * (pi.y - pj.y);
-				if(distance > 0.1 && distance < Sketch.Fluid.prototype.RANGE2) {
+			 for(var j = 0; j < g._numParticles; j++) {
+                var pj = g._particles[j];
+                var distance = (pi.x - pj.x) * (pi.x - pj.x) + (pi.y - pj.y) * (pi.y - pj.y);
+                if(distance < Sketch.Fluid.prototype.RANGE2) {
                     if(this._neighbors.length == this._numNeighbors)
-						this._neighbors[ this._numNeighbors ] = new Sketch.Neighbor();
+                        this._neighbors[this._numNeighbors] = new Sketch.Neighbor();
 
-					this._neighbors[ this._numNeighbors++ ].setParticle(pi, pj);
+                    this._neighbors[this._numNeighbors++].setParticle(pi, pj);
                 }
-			}
+            }
 		},
 
 		calcForce: function() {
@@ -237,8 +232,8 @@
 		update: function() {
 			this.vy += Sketch.Fluid.prototype.GRAVITY;
 			if(this.density > 0 ) {
-				this.vx += this.fx / ( this.density * 0.8 + 0.1 );
-				this.vy += this.fy / ( this.density * 0.8 + 0.1 );
+				this.vx += this.fx / ( this.density * 0.9 + 0.1 );
+				this.vy += this.fy / ( this.density * 0.9 + 0.1 );
 			}
 
 			this.x += this.vx;
@@ -268,32 +263,28 @@
 			this.p2 = p2;
 			this.nx = p1.x - p2.x;
 			this.ny = p1.y - p2.y;
-			this.distance = Math.sqrt( this.nx*this.nx + this.ny*this.ny);
+			this.distance = Math.sqrt(this.nx * this.nx + this.ny * this.ny) + 0.0001;
+			this.weight = 1 - this.distance / Sketch.Fluid.prototype.RANGE;
 
-			this.weight = 1.0 - (this.distance / Sketch.Fluid.prototype.RANGE);
-
-			var density = this.weight * this.weight;
+			var density = this.weight * this.weight; // 普通の圧力カーネルは距離の二乗
 			p1.density += density;
 			p2.density += density;
-
-			density *= this.weight * Sketch.Fluid.prototype.PRESSURE_NEAR;
+			density *= this.weight * Sketch.Fluid.prototype.PRESSURE_NEAR; // 粒子が近づきすぎないよう近距離用のカーネルを計算
 			p1.densityNear += density;
 			p2.densityNear += density;
-
-			var invDistance = 1.0 / this.distance;
+			var invDistance = 1 / this.distance;
 			this.nx *= invDistance;
 			this.ny *= invDistance;
 		},
 
 		calcForce: function() {
-			var p = (this.p1.density + this.p2.density - Sketch.Fluid.prototype.DENSITY * 2) * Sketch.Fluid.prototype.PRESSURE;
-			var pn  = (this.p1.densityNear + this.p2.densityNear) * Sketch.Fluid.prototype.PRESSURE_NEAR;
-
-			var pressureWeight = this.weight * (p + this.weight * pn);
+			var p = (this.p1.density + this.p2.density - Sketch.Fluid.prototype.DENSITY * 1.5) * Sketch.Fluid.prototype.PRESSURE;
+			var pn = (this.p1.densityNear + this.p2.densityNear) * Sketch.Fluid.prototype.PRESSURE_NEAR; // 基準密度に関係なく近づきすぎたら跳ね返す！
+			var pressureWeight = this.weight * (p + this.weight * pn); // 結果としてかかる圧力
 			var viscosityWeight = this.weight * Sketch.Fluid.prototype.VISCOSITY;
 			var fx = this.nx * pressureWeight;
-			var fy = this.ny * pressureWeight;
-			fx += (this.p2.vx - this.p1.vx) * viscosityWeight;
+			var fy= this.ny * pressureWeight;
+			fx += (this.p2.vx - this.p1.vx) * viscosityWeight; // 単純に粘性項を解く
 			fy += (this.p2.vy - this.p1.vy) * viscosityWeight;
 			this.p1.fx += fx;
 			this.p1.fy += fy;
