@@ -79,6 +79,7 @@
 		_gravity			: 0,
 
 		ALPHA				: 0.025,
+		FADE				: true,
 
 		initMouseEvents: function() {
 			var that = this;
@@ -211,14 +212,28 @@
 		},
 
 		draw: function( context, alpha ) {
-			context.beginPath();
-			context.closePath();
-			context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
-				for(var i = 1; i < this.filamentCount; ++i) {
-					context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y )
+			var i = 0;
+			if(Sketch.RibbonPaint.prototype.FADE) {
+				context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
+				for(i = 1; i < this.filamentCount; ++i) {
+					context.beginPath();
+					context.closePath();
+					context.moveTo( this.position.x + this._filaments[i-1].position.x, this.position.y + this._filaments[i-1].position.y );
+					context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
+					context.strokeStyle = "rgba(25, 25, 25, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
+					context.stroke();
 				}
-			context.strokeStyle = "rgba(25, 25, 25, " + alpha + ")";
-			context.stroke();
+			} else {
+				context.beginPath();
+				context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
+					for(i = 1; i < this.filamentCount; ++i) {
+						context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
+					}
+
+				context.strokeStyle = "rgba(25, 25, 25, " + 0.01 + ")";
+				context.stroke();
+				context.closePath();
+			}
 		},
 
 		drag: function( segment, xpos, ypos ) {

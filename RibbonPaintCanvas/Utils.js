@@ -34,6 +34,7 @@
 			this.add('_filamentSpacing').min(1).max(50);
 			this.add('_frictionMin').min(0.85).max(0.93);
 			this.add('_frictionMax').min(0.85).max(0.93);
+			this.add('FADE');
 			this.add("ALPHA").min(0.01).max(0.5);
 		},
 
@@ -46,7 +47,7 @@
 			var that = this;
 			for( var i = 0; i < DAT.GUI.allControllers.length; ++i ) {
 				var controller = DAT.GUI.allControllers[i];
-				controller.onFinishChange( function( value ) {
+				controller.onChange( function( value ) {
 						that.onChange(controller, value)
 				});
 			}
