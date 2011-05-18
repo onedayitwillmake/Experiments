@@ -10,7 +10,8 @@
 		canvas.id = "container";
 		canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-		document.body.appendChild( canvas );
+
+		document.body.insertBefore( canvas, document.getElementById("linklist") );
 
 		var context = canvas.getContext("2d");
 		context.globalCompositeOperation = "darker";
@@ -50,7 +51,7 @@
 (function(){
 	Sketch = Sketch || {};
 	Sketch.RibbonPaint = function( aCanvas ) {
-		this._lines = [];
+		this._bristles = [];
 		this._mousePosition = new Sketch.Point(0, 0);
 
 		this._canvas = aCanvas;
@@ -61,7 +62,7 @@
 	};
 
 	Sketch.RibbonPaint.prototype = {
-		_lines			: [],
+		_bristles			: [],
 		_mousePosition	: Sketch.Point.ZERO,
 		_press			: false,
 
@@ -69,46 +70,54 @@
 		_context		: null,
 
 		// Brush props
-		_bristleCount		: 10,
-		_brushRadius		: 4,
-		_filamentSpacing    : 30,
-		_filamentCount      : 10,
-		_frictionMin		: 0.9,
+		_bristleCount		: 3,
+		_brushRadius		: 0,
+		_filamentSpacing    : 12,
+		_filamentCount      : 15,
+		_frictionMin		: 0.87,
 		_frictionMax		: 0.92,
 		_gravity			: 0,
+
+		ALPHA				: 0.025,
 
 		initMouseEvents: function() {
 			var that = this;
 			this._canvas.addEventListener('mousedown', function(e) { that.onMouseDown(e) }, false);
 			this._canvas.addEventListener('mousemove', function(e) { that.onMouseMove(e) }, false);
 			this._canvas.addEventListener('mouseup', function(e) { that.onMouseUp(e) }, false);
+
+			// Save image with S
+			document.addEventListener('keydown', function(e) {
+				if(e.keyCode != '83') return;
+				window.location = that._canvas.toDataURL();
+			}, false);
 		},
 
 		createBrush: function() {
-			this._lines = [];
+			this._bristles = [];
 
 			for (var i = 0; i < this._bristleCount; ++i) {
 				var radius = Math.random() * this._brushRadius;
 				var radian = Math.random() * Math.PI * 2;
 
 				//linePointer
-				var line = new Sketch.Line();
+				var line = new Sketch.Bristle();
 				line.position.x = Math.cos(radian) * radius;
 				line.position.y = Math.sin(radian) * radius;
 
-				line.segmentLength = this._filamentSpacing;
-				line.segmentNum = this._filamentCount;
+				line.filamentLength = this._filamentSpacing;
+				line.filamentCount = this._filamentCount;
 				line.gravity = this._gravity;
 				line.friction = Sketch.Utils.randRange( this._frictionMin, this._frictionMax );
 				line.init();
 
-				this._lines.push( line );
+				this._bristles.push( line );
 			}
 		},
 
 		update: function() {
 			for(var i = 0; i < this._bristleCount; ++i) {
-				this._lines[i].update( this._mousePosition, 0.2 );
+				this._bristles[i].update( this._mousePosition, 0.2 );
 			}
 		},
 
@@ -117,14 +126,16 @@
 				this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
 			}
 
-			this._context.beginPath();
-			this._context.closePath();
+			// Darker when not drawing
+			var alpha = this._press ? Sketch.RibbonPaint.prototype.ALPHA : 0.5;
+
 			for(var i = 0; i < this._bristleCount; ++i ) {
-				this._lines[i].draw( this._context );
+				this._bristles[i].draw( this._context, alpha );
 			}
 		},
 
 		onMouseDown: function(event) {
+			this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
 			this._press = true;
 		},
 
@@ -150,39 +161,39 @@
 
 		dealloc: function() {
 			for(var i = 0; i < this._bristleCount; ++i ) {
-				this._lines[i].dealloc();
-				delete this._lines[i];
+				this._bristles[i].dealloc();
+				delete this._bristles[i];
 			}
-			this._lines = null;
+			this._bristles = null;
 			this._bristleCount = 0;
 		}
 	};
 
-///// LINE
-	Sketch.Line = function () {
+///// Bristle
+	Sketch.Bristle = function () {
 		this.position = new Sketch.Point();
 		this.prevPosition = new Sketch.Point();
 	};
 
-	Sketch.Line.prototype = {
-		segmentNum		: 0,
-		segmentLength	: 0,
+	Sketch.Bristle.prototype = {
+		filamentCount	: 0,
+		filamentLength	: 0,
 		gravity			: 0,
 		friction		: 0,
 		position		: Sketch.Point.ZERO,
 		prevPosition	: Sketch.Point.ZERO,
 
-		_segments		: [],
+		_filaments		: [],
 
 		init: function() {
 			var i = 0;
 
-			this._segments = [];
-			this._segments.push( new Sketch.Segment( this.segmentLength * 0.1 ) );
+			this._filaments = [];
+			this._filaments.push( new Sketch.Filament( this.filamentLength * 0.1 ) );
 
-			for (i=1; i < this.segmentNum; ++i) {
-				var segment = new Sketch.Segment(this.segmentLength * (i * 0.6) );
-				this._segments.push( segment );
+			for (i=1; i < this.filamentCount; ++i) {
+				var segment = new Sketch.Filament(this.filamentLength * (i * 0.6) );
+				this._filaments.push( segment );
 			}
 		},
 
@@ -190,21 +201,23 @@
 			this.prevPosition.x += (toPosition.x - this.prevPosition.x) * damping;
 			this.prevPosition.y += (toPosition.y - this.prevPosition.y) * damping;
 
-			this.drag( this._segments[0], this.prevPosition.x, this.prevPosition.y);
+			this.drag( this._filaments[0], this.prevPosition.x, this.prevPosition.y);
 
-			for (var i = 1; i < this.segmentNum; ++i) {
-				var segmentA = this._segments[i];
-				var segmentB = this._segments[i-1];
+			for (var i = 1; i < this.filamentCount; ++i) {
+				var segmentA = this._filaments[i];
+				var segmentB = this._filaments[i-1];
 				this.drag( segmentA, segmentB.position.x, segmentB.position.y );
 			}
 		},
 
-		draw: function( context ) {
-			context.moveTo( this.position.x + this._segments[0].position.x, this.position.y + this._segments[0].position.y );
-				for(var i = 1; i < this.segmentNum; ++i) {
-					context.lineTo( this.position.x + this._segments[i].position.x, this.position.y + this._segments[i].position.y )
+		draw: function( context, alpha ) {
+			context.beginPath();
+			context.closePath();
+			context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
+				for(var i = 1; i < this.filamentCount; ++i) {
+					context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y )
 				}
-			context.strokeStyle = "rgba(25, 25, 25, 0.1)";
+			context.strokeStyle = "rgba(25, 25, 25, " + alpha + ")";
 			context.stroke();
 		},
 
@@ -215,70 +228,61 @@
 			var dy		= ypos  - segment.position.y;
 			segment.angle	= Math.atan2(dy, dx);
 
-			var pin = segment.getPin();
+			var pin = segment.getAnchor();
 			var w = pin.x - segment.position.x;
 			var h = pin.y - segment.position.y;
 
-			segment.position.x = xpos - w;
-			segment.position.y = ypos - h;
-			segment.setVector();
+			segment.position.set( xpos - w, ypos - h);
+			segment.setVelocity();
 
-			segment.vx *= this.friction;
-			segment.vy *= this.friction;
-			segment.vy += this.gravity;
+			segment.velocity.multiply(this.friction);
+			segment.velocity.y += this.gravity;
 		},
 
 		dealloc: function() {
-			for(var i = 0; i < this.segmentNum; ++i) {
-				this._segments[i].dealloc();
-				delete this._segments[i];
+			for(var i = 0; i < this.filamentCount; ++i) {
+				this._filaments[i].dealloc();
+				delete this._filaments[i];
 			}
 
-			this._segments = null;
+			this._filaments = null;
 			this.position = null;
 			this.prevPosition = null;
 		}
 	};
 
-///// SEGMENT
-	Sketch.Segment = function ( aLength ) {
-		this.segmentLength = aLength;
+///// Filament
+	Sketch.Filament = function ( aLength ) {
+		this.filamentLength = aLength;
 
 		this.angle = 0.0;
 		this.position = new Sketch.Point( Sketch.Utils.randRange(1.0, 1.5), Sketch.Utils.randRange(1.0, 1.5) );
-		this.vx = 0;
-		this.vy = 0;
-		this.prevX = 0;
-		this.prevX = 0;
+		this.velocity = new Sketch.Point( 0, 0 );
+		this.previousPosition = this.position.clone();
 	};
 
-	Sketch.Segment.prototype = {
-		segmentLength: 0,
-		angle		: 0,
-		position	: Sketch.Point.ZERO,
-		vx			: 0,
-		vy			: 0,
-		prevX		: 0,
-		prevY		: 0,
+	Sketch.Filament.prototype = {
+		filamentLength		: 0,
+		angle				: 0,
+		position			: Sketch.Point.ZERO,
+		previousPosition	: Sketch.Point.ZERO,
+		velocity			: Sketch.Point.ZERO,
 
 		update: function() {
-			this.position.x += this.vx;
-			this.position.y += this.vy;
+			this.position.translatePoint( this.velocity );
 		},
 
-		setVector: function() {
+		setVelocity: function() {
 			var damping = 0.99;
-			if(this.prevX && this.prevY) {
-				this.vx += ((this.position.x - this.prevX) - this.vx) * damping;
-				this.vy += ((this.position.y - this.prevY) - this.vy) * damping;
-			}
-			this.prevX = this.position.x;
-			this.prevY = this.position.y;
+			this.velocity.x += ((this.position.x - this.previousPosition.x) - this.velocity.x) * damping;
+			this.velocity.y += ((this.position.y - this.previousPosition.y) - this.velocity.y) * damping;
+			this.previousPosition.x = this.position.x;
+			this.previousPosition.y = this.position.y;
 		},
 
-		getPin: function() {
-			var xpos = this.position.x + Math.cos( this.angle ) * this.segmentLength;
-			var ypos = this.position.y + Math.sin( this.angle ) * this.segmentLength;
+		getAnchor: function() {
+			var xpos = this.position.x + Math.cos( this.angle ) * this.filamentLength;
+			var ypos = this.position.y + Math.sin( this.angle ) * this.filamentLength;
 
 			return new Sketch.Point( xpos, ypos );
 		},

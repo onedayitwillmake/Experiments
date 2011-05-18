@@ -72,52 +72,17 @@
     <favorites_list name="MultiphaseFlow" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.6854928">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="Sketch.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Sketch.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="258" column="10" selection-start="6438" selection-end="6440" vertical-scroll-proportion="0.4112628">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Utils.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Utils.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="60" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DAT.GUI.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/DAT.GUI.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="790" column="53" selection-start="19345" selection-end="19345" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Utils.js" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Utils.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="71" column="0" selection-start="1962" selection-end="1962" vertical-scroll-proportion="0.8300395">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="Utils.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="4" selection-start="401" selection-end="401" vertical-scroll-proportion="0.3257143">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -128,12 +93,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/original.as" />
-        <option value="$PROJECT_DIR$/Point.js" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/DAT.GUI.js" />
-        <option value="$PROJECT_DIR$/Sketch.js" />
+        <option value="$PROJECT_DIR$/Point.js" />
         <option value="$PROJECT_DIR$/Utils.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Sketch.js" />
+        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -199,6 +164,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -392,42 +358,51 @@
         <state line="867" column="14" selection-start="13421" selection-end="13421" vertical-scroll-proportion="0.33248731" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Point.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="4" selection-start="3559" selection-end="3559" vertical-scroll-proportion="2.5371428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.3469751">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DAT.GUI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="790" column="53" selection-start="19345" selection-end="19345" vertical-scroll-proportion="0.0">
+        <state line="790" column="53" selection-start="19345" selection-end="19345" vertical-scroll-proportion="0.46245733">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="60" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+        <state line="402" column="5" selection-start="6781" selection-end="6781" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13714285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="10" selection-start="6438" selection-end="6440" vertical-scroll-proportion="0.4112628">
+        <state line="80" column="35" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.69142854">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="11" selection-start="747" selection-end="750" vertical-scroll-proportion="0.6342857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="105" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.5640423">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="401" selection-end="401" vertical-scroll-proportion="0.3257143">
           <folding />
         </state>
       </provider>

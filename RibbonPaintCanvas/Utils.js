@@ -18,7 +18,7 @@
 
 		// Work around for display bug in DAT.GUI
 		this._gui.close();
-		this._gui.open();
+//		this._gui.open();
 	};
 	Sketch.GUIHelper.prototype = {
 		_gui					: null,
@@ -32,8 +32,9 @@
 			this.add('_brushRadius').min(0).max(20);
 			this.add('_filamentCount').min(1).max(50).step(1);
 			this.add('_filamentSpacing').min(1).max(50);
-			this.add('_frictionMin').min(0.85).max(0.9);
+			this.add('_frictionMin').min(0.85).max(0.93);
 			this.add('_frictionMax').min(0.85).max(0.93);
+			this.add("ALPHA").min(0.01).max(0.5);
 		},
 
 		// Catch add calls so that it will modify our property proxy instead of the actual ribbonpaint instance
@@ -62,7 +63,13 @@
 				that._ribbonPaintInstance.dealloc();
 
 				for(var prop in that._propProxy) {
-					that._ribbonPaintInstance[prop] = that._propProxy[prop];
+
+					// Prototype property
+					if(prop.indexOf("_") < 0) {
+					   Sketch.RibbonPaint.prototype[prop] = that._propProxy[prop]
+					} else { // instance property
+					 	that._ribbonPaintInstance[prop] = that._propProxy[prop];
+					}
 				}
 
 				that._ribbonPaintInstance.createBrush();

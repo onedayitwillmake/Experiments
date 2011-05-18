@@ -77,7 +77,18 @@
          * @param aPoint {Sketch.Point}
          * @return this
          */
-		subtract: function(aPoint) {
+		subtract: function(x, y) {
+			this.x -= x;
+			this.y -= y;
+			return this;
+		},
+
+		/**
+         * Substract a point from this one.
+         * @param aPoint {Sketch.Point}
+         * @return this
+         */
+		subtractPoint: function(aPoint) {
 			this.x -= aPoint.x;
 			this.y -= aPoint.y;
 			return this;
