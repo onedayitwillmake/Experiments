@@ -60,12 +60,12 @@
 		_context		: null,
 
 		// Brush props
-		_bristleCount		: 10,
+		_bristleCount		: 1,
 		_brushRadius		: 10,
-		_filamentSpacing    : 30,
-		_filamentCount      : 10,
-		_frictionMin		: 0.4,
-		_frictionMax		: 0.9,
+		_filamentSpacing    : 50,
+		_filamentCount      : 3,
+		_frictionMin		: 0.7,
+		_frictionRange		: 0.2,
 		_gravity			: 0,
 
 		initMouseEvents: function() {
@@ -80,7 +80,7 @@
 				this._lines = [];
 
 			for (var i = 0; i < this._bristleCount; ++i) {
-				var radius = Math.random() * this._brushRadius;
+				var radius =  this._brushRadius;
 				var radian = Math.random() * Math.PI * 2;
 
 				//linePointer
@@ -91,9 +91,9 @@
 				line.segmentLength = this._filamentSpacing;
 				line.segmentNum = this._filamentCount;
 				line.gravity = this._gravity;
-				line.friction = Math.random() * 0.8;//Sketch.Utils.randRange( this._frictionMin, this._frictionMax );
+				line.friction = Sketch.Utils.randRange( this._frictionMin, this._frictionMin+this._frictionRange );
 				line.init();
-
+				console.info(line);
 				this._lines.push( line );
 			}
 		},
@@ -106,6 +106,11 @@
 
 		draw: function() {
 
+			if(!this._press) {
+				this._context.beginPath();
+				this._context.closePath();
+			}
+
 			for(var i = 0; i < this._bristleCount; ++i ) {
 				this._lines[i].draw( this._context );
 			}
@@ -113,6 +118,10 @@
 
 		onMouseDown: function(event) {
 			this._press = true;
+
+			// Clear background
+			this._context.beginPath();
+			this._context.closePath();
 		},
 
 		onMouseMove: function(e) {
@@ -142,8 +151,8 @@
 	};
 
 	Sketch.Line.prototype = {
-		segmentNum		: 8,
-		segmentLength	: 20,
+		segmentNum		: 5,
+		segmentLength	: 5,
 		gravity			: 10,
 		friction		: 3,
 		x				: 0,
@@ -159,7 +168,7 @@
 			this._segments.push( new Sketch.Segment( 0 ) );
 
 			for (i=1; i < this.segmentNum; ++i) {
-				var segment = new Sketch.Segment(this.segmentLength * (i * 0.45) );
+				var segment = new Sketch.Segment(this.segmentLength * (i*0.5) );
 				this._segments.push( segment );
 			}
 		},
@@ -178,7 +187,6 @@
 		},
 
 		draw: function( context ) {
-			context.beginPath();
 			context.moveTo( this._segments[0].x, this._segments[0].y );
 				for(var i = 1; i < this.segmentNum; ++i) {
 					context.lineTo( this._segments[i].x, this._segments[i].y )
@@ -189,9 +197,11 @@
 
 		drag: function( segment, xpos, ypos ) {
 			segment.update();
+
 			var dx		= xpos - segment.x;
 			var dy		= ypos - segment.y;
 			segment.angle	= Math.atan2(dy, dx);
+//			console.log(segment.angle);
 
 			var pin = segment.getPin();
 			var w = pin.x - segment.x;
@@ -217,11 +227,49 @@
 
 		this.vx = Sketch.Utils.randRange(0.0, 1.0);
 		this.vy = Sketch.Utils.randRange(0.0, 1.0);
-		this.prevX = Sketch.Utils.randRange(0.0, 1.0);
+		this.prevY = Sketch.Utils.randRange(0.0, 1.0);
 		this.prevX = Sketch.Utils.randRange(0.0, 1.0);
 	};
 
 	Sketch.Segment.prototype = {
+		/**{
+		private var segmentLeng	:Number;
+		public  var vx			:Number = 0;
+		public  var vy			:Number = 0;
+
+		private var prevX		:Number = 0;
+		private var prevY		:Number = 0;
+
+		public function Segment( segmentLeng:Number ):void
+		{
+			this.segmentLeng = segmentLeng;
+		}
+
+		public function next():void
+		{
+			x += vx;
+			y += vy;
+		}
+
+		public function setVector():void
+		{
+			if( prevX ) vx = x - prevX;
+			if( prevY ) vy = y - prevY;
+
+			prevX = x;
+			prevY = y;
+		}
+
+		public function getPin():Point
+		{
+			var angle	:Number = rotation * Math.PI / 180;
+			var xpos	:Number = x + Math.cos( angle ) * segmentLeng;
+			var ypos	:Number = y + Math.sin( angle ) * segmentLeng;
+
+			return new Point( xpos, ypos );
+		}
+	}
+		 */
 		segmentLength: 0,
 		angle		: 0,
 		x			: 0,
@@ -237,10 +285,9 @@
 		},
 
 		setVector: function() {
-			var damping = 0.981;
 			if(this.prevX && this.prevY) {
-				this.vx += ((this.x - this.prevX) - this.vx) * damping;
-				this.vy += ((this.y - this.prevY) - this.vy) * damping;
+				this.vx = (this.x - this.prevX);
+				this.vy = (this.x - this.prevY);
 			}
 			this.prevX = this.x;
 			this.prevY = this.y;
@@ -254,3 +301,4 @@
 		}
 	};
 }());
+
