@@ -1,4 +1,8 @@
-// Lots of 'trying out stuff' below, so view at your own peril
+/**
+ * RibbonPaintCanvas
+ * Mario Gonzalez
+ * http://ribbonpaint.com
+ */
 (function(){
 	var onLoad = function( event ) {
 		// Create canvas element
@@ -9,11 +13,16 @@
 		document.body.appendChild( canvas );
 
 		var context = canvas.getContext("2d");
+		context.globalCompositeOperation = "darker";
 		var ribbonPaint = new Sketch.RibbonPaint( canvas );
+
+		// GUIDAT HELPER
+		var GuiDatController = new Sketch.GUIHelper( ribbonPaint );
+
 
 		// Loop
 		(function loop() {
-			context.clearRect(0, 0, canvas.width, canvas.height);
+
 			ribbonPaint.update();
 			ribbonPaint.draw();
 			window.requestAnimationFrame( loop, null );
@@ -61,11 +70,11 @@
 
 		// Brush props
 		_bristleCount		: 10,
-		_brushRadius		: 10,
+		_brushRadius		: 4,
 		_filamentSpacing    : 30,
 		_filamentCount      : 10,
-		_frictionMin		: 0.4,
-		_frictionMax		: 0.9,
+		_frictionMin		: 0.9,
+		_frictionMax		: 0.92,
 		_gravity			: 0,
 
 		initMouseEvents: function() {
@@ -76,8 +85,7 @@
 		},
 
 		createBrush: function() {
-			if(this._lines.length != 0)
-				this._lines = [];
+			this._lines = [];
 
 			for (var i = 0; i < this._bristleCount; ++i) {
 				var radius = Math.random() * this._brushRadius;
@@ -85,13 +93,13 @@
 
 				//linePointer
 				var line = new Sketch.Line();
-				line.x = Math.cos(radian) * radius;
-				line.y = Math.sin(radian) * radius;
+				line.position.x = Math.cos(radian) * radius;
+				line.position.y = Math.sin(radian) * radius;
 
 				line.segmentLength = this._filamentSpacing;
 				line.segmentNum = this._filamentCount;
 				line.gravity = this._gravity;
-				line.friction = Math.random() * 0.8;//Sketch.Utils.randRange( this._frictionMin, this._frictionMax );
+				line.friction = Sketch.Utils.randRange( this._frictionMin, this._frictionMax );
 				line.init();
 
 				this._lines.push( line );
@@ -100,12 +108,17 @@
 
 		update: function() {
 			for(var i = 0; i < this._bristleCount; ++i) {
-				this._lines[i].update( this._mousePosition, 0.5 );
+				this._lines[i].update( this._mousePosition, 0.2 );
 			}
 		},
 
 		draw: function() {
+			if(!this._press) { // Clear background
+				this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+			}
 
+			this._context.beginPath();
+			this._context.closePath();
 			for(var i = 0; i < this._bristleCount; ++i ) {
 				this._lines[i].draw( this._context );
 			}
@@ -133,77 +146,97 @@
 
 		onMouseUp: function(event) {
 		   this._press = false;
+		},
+
+		dealloc: function() {
+			for(var i = 0; i < this._bristleCount; ++i ) {
+				this._lines[i].dealloc();
+				delete this._lines[i];
+			}
+			this._lines = null;
+			this._bristleCount = 0;
 		}
 	};
 
 ///// LINE
 	Sketch.Line = function () {
-
+		this.position = new Sketch.Point();
+		this.prevPosition = new Sketch.Point();
 	};
 
 	Sketch.Line.prototype = {
-		segmentNum		: 8,
-		segmentLength	: 20,
-		gravity			: 10,
-		friction		: 3,
-		x				: 0,
-		y				: 0,
-		oldX			: 0,
-		oldY			: 0,
+		segmentNum		: 0,
+		segmentLength	: 0,
+		gravity			: 0,
+		friction		: 0,
+		position		: Sketch.Point.ZERO,
+		prevPosition	: Sketch.Point.ZERO,
 
 		_segments		: [],
 
 		init: function() {
 			var i = 0;
 
-			this._segments.push( new Sketch.Segment( 0 ) );
+			this._segments = [];
+			this._segments.push( new Sketch.Segment( this.segmentLength * 0.1 ) );
 
 			for (i=1; i < this.segmentNum; ++i) {
-				var segment = new Sketch.Segment(this.segmentLength * (i * 0.45) );
+				var segment = new Sketch.Segment(this.segmentLength * (i * 0.6) );
 				this._segments.push( segment );
 			}
 		},
 
 		update: function( toPosition, damping ) {
-			this.oldX += (toPosition.x - this.oldX) * damping;
-			this.oldY += (toPosition.y - this.oldY) * damping;
+			this.prevPosition.x += (toPosition.x - this.prevPosition.x) * damping;
+			this.prevPosition.y += (toPosition.y - this.prevPosition.y) * damping;
 
-			this.drag( this._segments[0], this.oldX, this.oldY);
+			this.drag( this._segments[0], this.prevPosition.x, this.prevPosition.y);
 
 			for (var i = 1; i < this.segmentNum; ++i) {
 				var segmentA = this._segments[i];
 				var segmentB = this._segments[i-1];
-				this.drag( segmentA, segmentB.x, segmentB.y );
+				this.drag( segmentA, segmentB.position.x, segmentB.position.y );
 			}
 		},
 
 		draw: function( context ) {
-			context.beginPath();
-			context.moveTo( this._segments[0].x, this._segments[0].y );
+			context.moveTo( this.position.x + this._segments[0].position.x, this.position.y + this._segments[0].position.y );
 				for(var i = 1; i < this.segmentNum; ++i) {
-					context.lineTo( this._segments[i].x, this._segments[i].y )
+					context.lineTo( this.position.x + this._segments[i].position.x, this.position.y + this._segments[i].position.y )
 				}
-			context.strokeStyle = "#FF0000";
+			context.strokeStyle = "rgba(25, 25, 25, 0.1)";
 			context.stroke();
 		},
 
 		drag: function( segment, xpos, ypos ) {
 			segment.update();
-			var dx		= xpos - segment.x;
-			var dy		= ypos - segment.y;
+
+			var dx		= xpos - segment.position.x;
+			var dy		= ypos  - segment.position.y;
 			segment.angle	= Math.atan2(dy, dx);
 
 			var pin = segment.getPin();
-			var w = pin.x - segment.x;
-			var h = pin.y - segment.y;
+			var w = pin.x - segment.position.x;
+			var h = pin.y - segment.position.y;
 
-			segment.x = xpos - w;
-			segment.y = ypos - h;
+			segment.position.x = xpos - w;
+			segment.position.y = ypos - h;
 			segment.setVector();
 
 			segment.vx *= this.friction;
 			segment.vy *= this.friction;
 			segment.vy += this.gravity;
+		},
+
+		dealloc: function() {
+			for(var i = 0; i < this.segmentNum; ++i) {
+				this._segments[i].dealloc();
+				delete this._segments[i];
+			}
+
+			this._segments = null;
+			this.position = null;
+			this.prevPosition = null;
 		}
 	};
 
@@ -212,45 +245,46 @@
 		this.segmentLength = aLength;
 
 		this.angle = 0.0;
-		this.x = Sketch.Utils.randRange(1.0, 1.5);
-		this.y = Sketch.Utils.randRange(1.0, 1.5);
-
-		this.vx = Sketch.Utils.randRange(0.0, 1.0);
-		this.vy = Sketch.Utils.randRange(0.0, 1.0);
-		this.prevX = Sketch.Utils.randRange(0.0, 1.0);
-		this.prevX = Sketch.Utils.randRange(0.0, 1.0);
+		this.position = new Sketch.Point( Sketch.Utils.randRange(1.0, 1.5), Sketch.Utils.randRange(1.0, 1.5) );
+		this.vx = 0;
+		this.vy = 0;
+		this.prevX = 0;
+		this.prevX = 0;
 	};
 
 	Sketch.Segment.prototype = {
 		segmentLength: 0,
 		angle		: 0,
-		x			: 0,
-		y			: 0,
+		position	: Sketch.Point.ZERO,
 		vx			: 0,
 		vy			: 0,
 		prevX		: 0,
 		prevY		: 0,
 
 		update: function() {
-			this.x += this.vx;
-			this.y += this.vy;
+			this.position.x += this.vx;
+			this.position.y += this.vy;
 		},
 
 		setVector: function() {
-			var damping = 0.981;
+			var damping = 0.99;
 			if(this.prevX && this.prevY) {
-				this.vx += ((this.x - this.prevX) - this.vx) * damping;
-				this.vy += ((this.y - this.prevY) - this.vy) * damping;
+				this.vx += ((this.position.x - this.prevX) - this.vx) * damping;
+				this.vy += ((this.position.y - this.prevY) - this.vy) * damping;
 			}
-			this.prevX = this.x;
-			this.prevY = this.y;
+			this.prevX = this.position.x;
+			this.prevY = this.position.y;
 		},
 
 		getPin: function() {
-			var xpos = this.x + Math.cos( this.angle ) * this.segmentLength;
-			var ypos = this.y + Math.sin( this.angle ) * this.segmentLength;
+			var xpos = this.position.x + Math.cos( this.angle ) * this.segmentLength;
+			var ypos = this.position.y + Math.sin( this.angle ) * this.segmentLength;
 
 			return new Sketch.Point( xpos, ypos );
+		},
+
+		dealloc: function() {
+			this.position = null;
 		}
 	};
 }());
