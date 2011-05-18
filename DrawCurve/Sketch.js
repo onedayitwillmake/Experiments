@@ -28,6 +28,10 @@
 		// Loop
 		(function loop() {
 			context.clearRect(0, 0, canvas.width, canvas.height);
+
+			context.fillStyle = "#000000";
+			context.rect(0, 0, canvas.width, canvas.height);
+			context.fillRect(0, 0, cn)
 			context.globalCompositeOperation = "darker";
 
 			for(var i = 0; i < colors.length; ++i) {

@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFFFFF;
+}
+#container {
+	position: absolute;
+}
+
+A:link { color: #DD00FF; text-decoration: none}
+A:visited{text-decoration:none}
+A:active{text-decoration:none}
+a:hover{text-decoration:underline}
+:focus { outline: none };
