@@ -9,7 +9,7 @@
 		document.getElementById('container').appendChild( canvas );
 
 		var context = canvas.getContext("2d");
-		context.lineWidth = 1;
+		context.lineWidth = 0.5;
 		context.strokeStyle ="rgb(255,255, 255,255)";
 
 
@@ -20,11 +20,11 @@
 		(function loop() {
 			// Clear top
 			var points = [];
-			var pointCount = 50;
-			var rise = canvas.height*0.4;
+			var pointCount = 10;
+			var rise = canvas.height*0.6;
 			var lineWidth = (canvas.width+200)/pointCount;
 			for ( var i = 0; i < pointCount; i++ ) {
-				var noise = CanvasPS3.noise( i * 0.05 + tn, t, tn);
+				var noise = CanvasPS3.noise( i * 0.25 + tn, t, tn);
 				var nX = i*lineWidth + Math.sin(noise)*5;
 				var nY = noise * rise - (rise*0.5) + 200;
 				points[ i ] = { x: Math.floor(nX), y: Math.floor(nY) };
@@ -37,40 +37,41 @@
 			var previousMidpoint = null;
 			
 			// Slowly erase
+//			context.globalCompositeOperation = "source-over";
 			context.fillStyle = "rgba(0, 0, 0,0.004)";
 			context.fillRect(0, 0, canvas.width, canvas.height);
 			context.save();
 			context.translate(0, canvas.height/2);
+//			context.globalCompositeOperation = "lighter";
 			for(i = 0; i < points.length; ++i) {
-				var hsv = CanvasPS3.HSVRGB((t*360*0.15) % 360, 60, 80);
+				var hsv = CanvasPS3.HSVRGB((t*360*0.1) % 360, 60, 100);
 				position = spline.get2DPoint( points, i/pointCount );
 
-				context.strokeStyle = "rgba(" + hsv[0] + "," + hsv[1] +"," + hsv[2] + "," + 0.2 + ")";
+
 				context.beginPath();
+
 
 				// Midpoint
 				var midpoint = {x:oldPosition.x + (position.x - oldPosition.x) * .5,
 							y: oldPosition.y + (position.y - oldPosition.y) * .5};
 
 				//  Draw a quadratic bezier curve to the next point in the path
-//				if(previousMidpoint) {
-// 					context.moveTo(previousMidpoint.x, previousMidpoint.y);
-// 					context.quadraticCurveTo(oldPosition.x, oldPosition.y,midpoint.x, midpoint.y);
-// 				} else {
-//
-// 				}
-				context.moveTo(oldPosition.x, oldPosition.y);
-				context.lineTo(position.x, position.y);
-				context.closePath();
+				if(previousMidpoint) {
+					context.moveTo(previousMidpoint.x, previousMidpoint.y);
+					context.quadraticCurveTo(oldPosition.x, oldPosition.y,midpoint.x, midpoint.y);
+				} else {
+				}
+
+				context.strokeStyle = "rgba(" + hsv[0] + "," + hsv[1] +"," + hsv[2] + "," +0.9+ ")";
 				context.stroke();
-				
+				 	context.closePath();
 				previousMidpoint = midpoint;
 				oldPosition.x = position.x;
 				oldPosition.y = position.y;
 			}
 			context.restore();
-			t += 0.005;
-			tn += 0.004;
+			t += 0.0016;
+			tn += 0.01;
 			// Loop
 			window.requestAnimationFrame( loop, null );
 		})();
