@@ -80,6 +80,7 @@
 
 		ALPHA				: 0.025,
 		FADE				: true,
+		CURVES				: true,
 
 		initMouseEvents: function() {
 			var that = this;
@@ -183,12 +184,16 @@
 		friction		: 0,
 		position		: Sketch.Point.ZERO,
 		prevPosition	: Sketch.Point.ZERO,
-
+		
+		alphaFunction	: null,
 		_filaments		: [],
 
 		init: function() {
 			var i = 0;
-
+			
+			this.alphaFunction = this.strategyCreateAlphaFunction();
+			this.draw = this.strategyCreatePathFunction();
+			
 			this._filaments = [];
 			this._filaments.push( new Sketch.Filament( this.filamentLength * 0.1 ) );
 
@@ -211,30 +216,8 @@
 			}
 		},
 
-		draw: function( context, alpha ) {
-			var i = 0;
-			if(Sketch.RibbonPaint.prototype.FADE) {
-				context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
-				for(i = 1; i < this.filamentCount; ++i) {
-					context.beginPath();
-					context.closePath();
-					context.moveTo( this.position.x + this._filaments[i-1].position.x, this.position.y + this._filaments[i-1].position.y );
-					context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
-					context.strokeStyle = "rgba(25, 25, 25, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
-					context.stroke();
-				}
-			} else {
-				context.beginPath();
-				context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
-					for(i = 1; i < this.filamentCount; ++i) {
-						context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
-					}
 
-				context.strokeStyle = "rgba(25, 25, 25, " + 0.01 + ")";
-				context.stroke();
-				context.closePath();
-			}
-		},
+		draw: function(){}, // To be replaced via stategy at init time
 
 		drag: function( segment, xpos, ypos ) {
 			segment.update();
@@ -253,13 +236,80 @@
 			segment.velocity.multiply(this.friction);
 			segment.velocity.y += this.gravity;
 		},
-
+		
+		/**
+		* Returns a function that will determin the alpha of the curve (fade or not)
+		*/
+		strategyCreateAlphaFunction: function() {
+			if(Sketch.RibbonPaint.prototype.FADE) {
+				return function(i, alpha) {
+					return "rgba(25, 25, 25, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
+				};
+			} else { 
+				return function(i, alpha) {
+					return "rgba(25, 25, 25, " + alpha + ")";
+				};
+			}
+		},
+		
+		/**
+		* Returns a function (used at init time) that will create the path of the brush
+		*/
+ 		strategyCreatePathFunction: function() {
+ 			if(Sketch.RibbonPaint.prototype.CURVES) {
+	 			// Smooth curve function
+				return function(context, alpha) {
+					var i = 0;			
+					var control = null;
+					var previousControl = null;
+					var oldPosition = new Sketch.Point(this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y);
+					
+					
+					for(i = 1; i < this.filamentCount; ++i) {
+						context.beginPath();
+						context.closePath();
+						
+						control = new Sketch.Point(0, 0);
+						control.x = ( oldPosition.x + (this.position.x + this._filaments[i].position.x) ) * 0.5;
+						control.y = ( oldPosition.y + (this.position.y + this._filaments[i].position.y) ) * 0.5;
+						
+						if(previousControl) {
+							context.moveTo(previousControl.x, previousControl.y);
+							context.quadraticCurveTo(oldPosition.x, oldPosition.y,control.x, control.y);
+						}
+						
+						context.strokeStyle = this.alphaFunction(i, alpha);
+						context.stroke();
+						
+						oldPosition.set( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
+						previousControl = control;
+					}
+				}
+ 			} else {
+	 			return function(context, alpha) { // Regular line segments
+					context.beginPath();
+					context.moveTo( this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y );
+						for(i = 1; i < this.filamentCount; ++i) {
+							context.lineTo( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
+						}
+					context.strokeStyle = this.alphaFunction(i, alpha);
+					context.stroke();
+					context.closePath();
+				}
+ 			}
+ 		},
+ 		
+		/**
+		* Deallocate memory
+		*/
 		dealloc: function() {
 			for(var i = 0; i < this.filamentCount; ++i) {
 				this._filaments[i].dealloc();
 				delete this._filaments[i];
 			}
 
+			this.draw = null;
+			this.alphaFunction = null;
 			this._filaments = null;
 			this.position = null;
 			this.prevPosition = null;
