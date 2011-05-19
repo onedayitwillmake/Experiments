@@ -14,11 +14,12 @@
 		document.body.insertBefore( canvas, document.getElementById("linklist") );
 
 		var context = canvas.getContext("2d");
-		context.globalCompositeOperation = "darker";
+		context.globalCompositeOperation = "lighter";
 		var ribbonPaint = new Sketch.RibbonPaint( canvas );
 
 		// GUIDAT HELPER
 		var GuiDatController = new Sketch.GUIHelper( ribbonPaint );
+			
 
 
 		// Loop
@@ -76,7 +77,7 @@
 		_filamentCount      : 15,
 		_frictionMin		: 0.87,
 		_frictionMax		: 0.92,
-		_gravity			: 0,
+		_gravity			: 0.3,
 
 		ALPHA				: 0.025,
 		FADE				: true,
@@ -126,6 +127,9 @@
 		draw: function() {
 			if(!this._press) { // Clear background
 				this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+				this._context.fillStyle = "#000000";
+				this._context.fillRect(0,0, this._canvas.width, this._canvas.height);
+				
 			}
 
 			// Darker when not drawing
@@ -138,6 +142,8 @@
 
 		onMouseDown: function(event) {
 			this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+				this._context.fillStyle = "#000000";
+				this._context.fillRect(0,0, this._canvas.width, this._canvas.height);
 			this._press = true;
 		},
 
@@ -243,11 +249,11 @@
 		strategyCreateAlphaFunction: function() {
 			if(Sketch.RibbonPaint.prototype.FADE) {
 				return function(i, alpha) {
-					return "rgba(25, 25, 25, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
+					return "rgba(255, 0, 100, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
 				};
 			} else { 
 				return function(i, alpha) {
-					return "rgba(25, 25, 25, " + alpha + ")";
+					return "rgba(255, 128, 25, " + alpha + ")";
 				};
 			}
 		},
