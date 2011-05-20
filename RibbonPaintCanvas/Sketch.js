@@ -14,12 +14,11 @@
 		document.body.insertBefore( canvas, document.getElementById("linklist") );
 
 		var context = canvas.getContext("2d");
-		context.globalCompositeOperation = "lighter";
 		var ribbonPaint = new Sketch.RibbonPaint( canvas );
 
 		// GUIDAT HELPER
 		var GuiDatController = new Sketch.GUIHelper( ribbonPaint );
-			
+
 
 
 		// Loop
@@ -35,18 +34,18 @@
 
 	if ( !window.requestAnimationFrame ) {
 			window.requestAnimationFrame = ( function() {
-			return window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame ||
-			window.oRequestAnimationFrame ||
-			window.msRequestAnimationFrame ||
-			function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
-			window.setTimeout( callback, 1000 / 60 );
-		};
-	})();
+				return window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
+					window.setTimeout( callback, 1000 / 60 );
+				};
+		})();
 
 
-	window.addEventListener('DOMContentLoaded', onLoad, true);
-}
+		window.addEventListener('DOMContentLoaded', onLoad, true);
+	}
 }());
 
 (function(){
@@ -77,11 +76,12 @@
 		_filamentCount      : 15,
 		_frictionMin		: 0.87,
 		_frictionMax		: 0.92,
-		_gravity			: 0.3,
+		_gravity			: 0.002,
 
 		ALPHA				: 0.025,
 		FADE				: true,
 		CURVES				: true,
+		ONBLACK			: true,
 
 		initMouseEvents: function() {
 			var that = this;
@@ -96,7 +96,27 @@
 			}, false);
 		},
 
+		strategyGetCompositionFunction: function() {
+			return Sketch.RibbonPaint.prototype.ONBLACK ? "lighter" : "darker";
+		},
+		strategyGetClearFunction: function() {
+			if(Sketch.RibbonPaint.prototype.ONBLACK) {
+				return function() {
+					this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+					this._context.fillStyle = "#000000";
+					this._context.fillRect(0,0, this._canvas.width, this._canvas.height);
+				}
+			} else {
+				return function() {
+					this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
+				}
+			}
+		},
+
 		createBrush: function() {
+			this._context.globalCompositeOperation = this.strategyGetCompositionFunction();
+			this.clearFunction = this.strategyGetClearFunction();
+
 			this._bristles = [];
 
 			for (var i = 0; i < this._bristleCount; ++i) {
@@ -126,10 +146,7 @@
 
 		draw: function() {
 			if(!this._press) { // Clear background
-				this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
-				this._context.fillStyle = "#000000";
-				this._context.fillRect(0,0, this._canvas.width, this._canvas.height);
-				
+				this.clearFunction();
 			}
 
 			// Darker when not drawing
@@ -141,9 +158,7 @@
 		},
 
 		onMouseDown: function(event) {
-			this._context.clearRect(0, 0, this._canvas.width, this._canvas.height);
-				this._context.fillStyle = "#000000";
-				this._context.fillRect(0,0, this._canvas.width, this._canvas.height);
+			this.clearFunction();
 			this._press = true;
 		},
 
@@ -190,16 +205,17 @@
 		friction		: 0,
 		position		: Sketch.Point.ZERO,
 		prevPosition	: Sketch.Point.ZERO,
-		
+
 		alphaFunction	: null,
 		_filaments		: [],
 
 		init: function() {
 			var i = 0;
-			
+
+			this.colorFunction = this.strategyGetColorRGB();
 			this.alphaFunction = this.strategyCreateAlphaFunction();
 			this.draw = this.strategyCreatePathFunction();
-			
+
 			this._filaments = [];
 			this._filaments.push( new Sketch.Filament( this.filamentLength * 0.1 ) );
 
@@ -242,22 +258,22 @@
 			segment.velocity.multiply(this.friction);
 			segment.velocity.y += this.gravity;
 		},
-		
+
 		/**
 		* Returns a function that will determin the alpha of the curve (fade or not)
 		*/
 		strategyCreateAlphaFunction: function() {
 			if(Sketch.RibbonPaint.prototype.FADE) {
 				return function(i, alpha) {
-					return "rgba(255, 0, 100, " + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
+					return this.colorFunction() + ((1.0-(i/this.filamentCount))*alpha + 0.005) + ")";
 				};
-			} else { 
+			} else {
 				return function(i, alpha) {
-					return "rgba(255, 128, 25, " + alpha + ")";
+					return this.colorFunction() + alpha + ")";
 				};
 			}
 		},
-		
+
 		/**
 		* Returns a function (used at init time) that will create the path of the brush
 		*/
@@ -265,28 +281,28 @@
  			if(Sketch.RibbonPaint.prototype.CURVES) {
 	 			// Smooth curve function
 				return function(context, alpha) {
-					var i = 0;			
+					var i = 0;
 					var control = null;
 					var previousControl = null;
 					var oldPosition = new Sketch.Point(this.position.x + this._filaments[0].position.x, this.position.y + this._filaments[0].position.y);
-					
-					
+
+
 					for(i = 1; i < this.filamentCount; ++i) {
 						context.beginPath();
 						context.closePath();
-						
+
 						control = new Sketch.Point(0, 0);
 						control.x = ( oldPosition.x + (this.position.x + this._filaments[i].position.x) ) * 0.5;
 						control.y = ( oldPosition.y + (this.position.y + this._filaments[i].position.y) ) * 0.5;
-						
+
 						if(previousControl) {
 							context.moveTo(previousControl.x, previousControl.y);
 							context.quadraticCurveTo(oldPosition.x, oldPosition.y,control.x, control.y);
 						}
-						
+
 						context.strokeStyle = this.alphaFunction(i, alpha);
 						context.stroke();
-						
+
 						oldPosition.set( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
 						previousControl = control;
 					}
@@ -304,7 +320,15 @@
 				}
  			}
  		},
- 		
+
+		strategyGetColorRGB: function() {
+			if(Sketch.RibbonPaint.prototype.ONBLACK) {
+				return function() { return "rgba(255, 0, 100, "; }
+			} else {
+				return function() { return "rgba(25, 25, 25, "; };
+			}
+		},
+
 		/**
 		* Deallocate memory
 		*/
@@ -316,6 +340,7 @@
 
 			this.draw = null;
 			this.alphaFunction = null;
+			this.colorFunction = null;
 			this._filaments = null;
 			this.position = null;
 			this.prevPosition = null;

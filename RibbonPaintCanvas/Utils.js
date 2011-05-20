@@ -37,6 +37,7 @@
 			this.add("ALPHA").min(0.01).max(0.5);
 			this.add('FADE');
 			this.add('CURVES');
+			this.add('ONBLACK');
 			
 		},
 
