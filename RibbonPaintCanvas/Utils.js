@@ -77,7 +77,12 @@
 				}
 
 				that._ribbonPaintInstance.createBrush();
+				that.adjustInstructionsColor();
 			}, 1000);
+		},
+
+		adjustInstructionsColor: function() {
+			document.getElementById("instructions").style.setProperty("color", Sketch.RibbonPaint.ONBLACK ? "#EEEEEE" : "#DDDDDD")
 		}
 	}
 

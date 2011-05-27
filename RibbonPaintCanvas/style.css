@@ -26,8 +26,8 @@ ul.tab li {
 
 #instructions {
 	font: 12px Lucida Grande, sans-serif;
-	color: #bbbbbb;
-	margin:0 auto;
+	color: #FF0000;
+	position: absolute;
 	padding: 0;
 	padding-top: 3px;
 }

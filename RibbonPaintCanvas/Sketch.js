@@ -10,22 +10,26 @@
 		canvas.id = "container";
 		canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
 		document.body.insertBefore( canvas, document.getElementById("linklist") );
+
+		var instructions = document.getElementById('instructions');
+		instructions.style.setProperty('margin-left', window.innerWidth/2 - (instructions.offsetWidth/2) + "px");
+
+
 
 		var context = canvas.getContext("2d");
 		var ribbonPaint = new Sketch.RibbonPaint( canvas );
 
 		// GUIDAT HELPER
-		var GuiDatController = new Sketch.GUIHelper( ribbonPaint );
+		var guiController = new Sketch.GUIHelper( ribbonPaint );
+		guiController.adjustInstructionsColor();
 
 
 
 		// Loop
 		(function loop() {
-
-			ribbonPaint.update();
-			ribbonPaint.draw();
+//			ribbonPaint.update();
+//			ribbonPaint.draw();
 			window.requestAnimationFrame( loop, null );
 		})();
 	};
@@ -74,7 +78,7 @@
 		_brushRadius		: 0,
 		_filamentSpacing    : 12,
 		_filamentCount      : 15,
-		_frictionMin		: 0.87,
+		_frictionMin		: 0.82,
 		_frictionMax		: 0.92,
 		_gravity			: 0.002,
 
@@ -88,12 +92,43 @@
 			this._canvas.addEventListener('mousedown', function(e) { that.onMouseDown(e) }, false);
 			this._canvas.addEventListener('mousemove', function(e) { that.onMouseMove(e) }, false);
 			this._canvas.addEventListener('mouseup', function(e) { that.onMouseUp(e) }, false);
+			this._canvas.addEventListener("touchstart", that.touchHandler, true);
+			this._canvas.addEventListener("touchmove", that.touchHandler, true);
+			this._canvas.addEventListener("touchend", that.touchHandler, true);
+			this._canvas.addEventListener("touchcancel", that.touchHandler, true);
 
 			// Save image with S
 			document.addEventListener('keydown', function(e) {
 				if(e.keyCode != '83') return;
 				window.location = that._canvas.toDataURL();
 			}, false);
+		},
+
+		/**
+		 * Convert touch to mouse events
+		 * @param event
+		 */
+		touchHandler: function( event ) {
+			var touches = event.changedTouches,
+			first = touches[0],
+			type = "";
+
+			event.preventDefault();
+			switch(event.type) {
+				case "touchstart": type = "mousedown"; break;
+				case "touchmove":  type ="mousemove"; break;
+				case "touchend":   type ="mouseup"; break;
+				default: return;
+			}
+
+			// Pass off as mouse event
+			var fakeMouseEvent = document.createEvent("MouseEvent");
+			fakeMouseEvent.initMouseEvent(type, true, true, window, 1,
+									  first.screenX, first.screenY,
+									  first.clientX, first.clientY, false,
+									  false, false, false, 0, null);
+
+			first.target.dispatchEvent(fakeMouseEvent);
 		},
 
 		strategyGetCompositionFunction: function() {
