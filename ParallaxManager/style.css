@@ -1,34 +1,20 @@
 body {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	background-color: #FFFFFF;
-	text-align:center;
 }
 
 #parallaxContainer {
+    width: 1000px;
+    height: 1000px;
 	overflow: hidden;
-}
-#linklist {
-	position: absolute;
-	font: 12px Lucida Grande, sans-serif;
-}
-ul.tab {
-	list-style-type: none;
-	margin: 0 325px 0 0;
-	padding: 4px 0 0;
-}
-ul.tab li {
-	padding: 5px;
-	display: inline;
-	background-color: #333333;
+    position: relative;
+    border: #333333 3px solid;
 }
 
-#instructions {
-	font: 12px Lucida Grande, sans-serif;
-	color: #FF0000;
-	position: absolute;
-	padding: 0;
-	padding-top: 3px;
+.parallaxObject {
+  position: absolute;
+   opacity: 0.5;
 }
 
 A:link { color: #efefef; text-decoration: none}
