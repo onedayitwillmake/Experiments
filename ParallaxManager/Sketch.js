@@ -20,18 +20,18 @@
 			div.style.background = "#" + (Math.round(Math.random()*255*255*255)).toString(16);
  			div.style.position = "absolute";
 			
-			var ratio = 1.0 - (size/maxSize); // smaller number = 'further away'
+			var ratio = (1.0 - (size/maxSize)); // smaller number = 'further away'
 			var halfWidth = window.innerWidth/2;
 			var halfHeight = window.innerHeight/2;
-			var offset = new Sketch.Point(Math.random() * halfWidth + halfWidth/2, Math.random() * halfHeight + halfHeight/2 ) 
-			parallaxManager.addChild( div, 1, new Sketch.Point(ratio, ratio), offset);
+			var offset = new Sketch.Point(Math.random() *5, 0) 
+			parallaxManager.addChild( div, 1, new Sketch.Point(ratio, ratio*0.1), offset);
 			container.appendChild( div );
 		}
 		
 		
 		// Loop
 		(function loop() {
-			var halfWidth = window.innerWidth;
+			var halfWidth = 1000;
 			var halfHeight = window.innerHeight;
 			var targetX = ( (parallaxManager._mousePosition.x-halfWidth) / window.innerWidth ) * halfWidth;
 			var targetY = ( (parallaxManager._mousePosition.y-halfHeight) / window.innerHeight ) * halfHeight;
