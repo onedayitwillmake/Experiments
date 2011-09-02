@@ -1,21 +1,26 @@
 /**
- * RibbonPaintCanvas
+ *
  * Mario Gonzalez
  * http://ribbonpaint.com
  */
 (function(){
 	var onLoad = function( event ) {
 		var container =	document.getElementById('parallaxContainer');
+        container.style.width = window.innerWidth-20 + "px";
+        container.style.height = window.innerHeight-20 + "px";
+
 		var parallaxManager = new Sketch.ParrallaxManager();
+
 		parallaxManager.initMouseEvents(container);
 		var mousePosition = new Sketch.Point(0,0);
 		
-		var len = 80;
-		var maxSize = 50;
+		var len = 200;
+		var maxSize = 100;
 		for(var i = 0; i < len; ++i) {
 			var size = Math.random() * maxSize;
 			var div = document.createElement("div");
 			div.style.width = Math.round(size)+ "px";
+<<<<<<< HEAD
 			div.style.height = Math.round(size) + "px"
 			div.style.background = "#" + (Math.round(Math.random()*255*255*255)).toString(16);
  			div.style.position = "absolute";
@@ -25,30 +30,54 @@
 			var halfHeight = window.innerHeight/2;
 			var offset = new Sketch.Point(Math.random() *5, 0) 
 			parallaxManager.addChild( div, 1, new Sketch.Point(ratio, ratio*0.1), offset);
+=======
+			div.style.height = Math.round(size) + "px";
+			div.style.background = "#" + (Math.round(Math.random()*255*255*255)).toString(16); // Random color
+            div.className += " parallaxObject";
+
+			var ratio = Math.random();//1.0 - (size/maxSize);           // smaller number = 'further away'
+			var halfWidth = window.innerWidth/2;
+			var halfHeight = window.innerHeight/2;
+
+            // Offset is where this object is relative to the
+//			var offset = new Sketch.Point(Math.random() * halfWidth + halfWidth/2, Math.random() * halfHeight + halfHeight)
+			var offset = new Sketch.Point(i * size, 0  );
+
+
+            parallaxManager.addChild( div, 1, new Sketch.Point(ratio, ratio), offset);
+>>>>>>> 751a0ff8f8431e358191b9d1b1f99e19a30600cc
 			container.appendChild( div );
 		}
 		
 		
 		// Loop
 		(function loop() {
+<<<<<<< HEAD
 			var halfWidth = 1000;
 			var halfHeight = window.innerHeight;
 			var targetX = ( (parallaxManager._mousePosition.x-halfWidth) / window.innerWidth ) * halfWidth;
 			var targetY = ( (parallaxManager._mousePosition.y-halfHeight) / window.innerHeight ) * halfHeight;
 			var ease = 0.1;
+=======
+			var xWidth = 5000;
+			var halfHeight = 1500;
+
+            var deltaX = (parallaxManager._mousePosition.x - window.innerWidth/2);
+            deltaX /= window.innerWidth;
+
+			var targetX = (deltaX * xWidth) + (xWidth/2);
+			var targetY = ( parallaxManager._mousePosition.y / window.innerHeight ) * halfHeight;
+			var ease = 0.05;
+>>>>>>> 751a0ff8f8431e358191b9d1b1f99e19a30600cc
 			
 			parallaxManager._position.x -= (parallaxManager._position.x-targetX) * ease;
 			parallaxManager._position.y -= (parallaxManager._position.y-targetY) * ease;
-			
+
 			parallaxManager.update();
 			window.requestAnimationFrame( loop, null );
 		})();
 	};
 
-
-	function initMouseEvents( container ) {
-			
-	}
 	if ( !window.requestAnimationFrame ) {
 			window.requestAnimationFrame = ( function() {
 				return window.webkitRequestAnimationFrame ||
@@ -78,9 +107,9 @@
 		
 		initMouseEvents: function( container ) {
 			var that = this;
-			document.addEventListener('mousedown', function(e) { that.onMouseDown(e) }, false);
-			document.addEventListener('mousemove', function(e) { that.onMouseMove(e) }, false);
-			document.addEventListener('mouseup', function(e) { that.onMouseUp(e) }, false);
+			container.addEventListener('mousedown', function(e) { that.onMouseDown(e) }, false);
+			container.addEventListener('mousemove', function(e) { that.onMouseMove(e) }, false);
+			container.addEventListener('mouseup', function(e) { that.onMouseUp(e) }, false);
 		},
 		
 		addChild : function( aChild, zIndex, parallaxRatio, positionOffset ) {
@@ -130,6 +159,7 @@
 		onMouseMove: function(e) {
 			var x, y;
 
+//            console.log("offsetx: " , e.offsetX, e.screenX);
 			// Get the mouse position relative to the canvas element.
 			if (e.layerX || e.layerX == 0) { // Firefox
 				x = e.layerX;
@@ -140,8 +170,8 @@
 			}
 
 	
-			this._mousePosition.x = x;
-			this._mousePosition.y = y;
+			this._mousePosition.x = e.screenX;
+			this._mousePosition.y = e.screenY;
 		},
 
 		onMouseUp: function(event) {
