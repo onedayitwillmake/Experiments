@@ -1,0 +1,78 @@
+<page internalID="7E228BB3-37BC-49B4-BC07-CA63BC858A41">
+<name>Page 4</name>
+<pageRole>2</pageRole>
+<contentState>3</contentState>
+<orientation>1</orientation>
+<pageClassName>iAP.LoadingViewController</pageClassName>
+<templateName>Loading</templateName>
+<supportedOrientations>
+    <integer>1</integer>
+</supportedOrientations>
+<properties>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,056,050.859</date>
+</lastModifiedDate>
+<components>
+    <component internalID="297C8380-4050-400C-97F3-8B0B5000F34E">
+        <componentClassName>iAd.ActivityIndicatorView</componentClassName>
+        <outlet>spinner</outlet>
+        <outletNameFromTemplate>spinner</outletNameFromTemplate>
+        <templateName>Spinner</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="ad-activity-indicator-view-style">ad-gray</property>
+            <property name="ad-animating">true</property>
+            <property name="ad-animation-style">ad-animation-stepped</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-hides-when-stopped">false</property>
+            <property name="ad-outlet">spinner</property>
+            <property name="height">334</property>
+            <property name="left">216</property>
+            <property name="top">346</property>
+            <property name="width">334</property>
+        </properties>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="8887F9F3-16CC-4BFC-A4A2-C9A246E37EB7">
+        <name>Page Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="41C72D1D-E9C5-4BC7-AEE3-7A287BBAEFEF">
+        <name>Page Disappear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="viewControllerViewDidAppear">
+            <actionSequenceReference>8887F9F3-16CC-4BFC-A4A2-C9A246E37EB7</actionSequenceReference>
+        </key>
+        <key name="viewControllerViewWillDisappear">
+            <actionSequenceReference>41C72D1D-E9C5-4BC7-AEE3-7A287BBAEFEF</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+</page>

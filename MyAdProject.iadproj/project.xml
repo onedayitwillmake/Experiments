@@ -1,0 +1,8 @@
+<project>
+<iAPVersion>817</iAPVersion>
+<bannerBackgroundColor>#dadde3</bannerBackgroundColor>
+<minimumiOSVersion>4.2</minimumiOSVersion>
+<minimumMinimumiOSVersion>4.2</minimumMinimumiOSVersion>
+<targetDevice>generic-iPad</targetDevice>
+<sections/>
+</project>

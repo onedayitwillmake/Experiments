@@ -1,0 +1,38 @@
+{
+  "Name" : "InsideRoom",
+  "ClassName" : "InsideRoom",
+  "Outlet" : "insideRoom",
+  "Properties" : {
+    "height" : "210",
+    "width" : "280",
+    "ad-initial-index" : "0",
+    "ad-orientation" : "horizontal",
+    "ad-friction" : "0.8",
+    "ad-is-mirrored-cells" : "false",
+    "ad-is-wrap-around-enabled" : "true"
+  },
+  "Children" : {
+    "Count" : "4",
+    "Template" : {
+      "ComponentTemplateName" : "Cell",
+      "Properties" : {
+      },
+      "Constraints" : {
+        "fixed-height" : "YES",
+        "fixed-width" : "YES",
+        "fixed-x" : "YES",
+        "fixed-y" : "YES"
+      },
+      "Children" : [
+        {
+          "ComponentTemplateName" : "Image",
+          "Properties" : {
+            "height" : "100%",
+            "width" : "100%",
+            "background-size" : "auto"
+          }
+        }
+      ]
+    }
+  }
+}

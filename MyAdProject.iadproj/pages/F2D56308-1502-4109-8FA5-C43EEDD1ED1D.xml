@@ -1,0 +1,234 @@
+<page internalID="F2D56308-1502-4109-8FA5-C43EEDD1ED1D">
+<name>Page 2</name>
+<pageRole>2</pageRole>
+<contentState>3</contentState>
+<orientation>1</orientation>
+<pageClassName>iAP.ViewController</pageClassName>
+<templateName>Map</templateName>
+<supportedOrientations>
+    <integer>1</integer>
+</supportedOrientations>
+<properties>
+    <property name="-iap-menu-back-button-was-added">true</property>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,056,034.463</date>
+</lastModifiedDate>
+<associatedPages>
+    <associatedPage>C8643582-4FDD-41AF-8C41-6747B6777813</associatedPage>
+</associatedPages>
+<components>
+    <component internalID="AF60DE56-043F-4A52-A49A-19E508A66208">
+        <componentClassName>iAd.Label</componentClassName>
+        <outlet>title</outlet>
+        <outletNameFromTemplate>title</outletNameFromTemplate>
+        <properties>
+            <property name="ad-number-of-lines">0</property>
+            <property name="ad-outlet">title</property>
+            <property name="ad-text">Locations</property>
+            <property name="color">#3d4045</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue"/>
+            </property>
+            <property name="font-size">58px</property>
+            <property name="height">80</property>
+            <property name="left">0</property>
+            <property name="text-align">center</property>
+            <property name="top">36</property>
+            <property name="width">768</property>
+        </properties>
+    </component>
+    <component internalID="5D24802F-42E6-45F1-A9C0-A00E2FF66636">
+        <componentClassName>iAP.MapView</componentClassName>
+        <outlet>mapView</outlet>
+        <outletNameFromTemplate>mapView</outletNameFromTemplate>
+        <templateName>Map View</templateName>
+        <properties>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-outlet">mapView</property>
+            <property name="ad-pin-offset-x">0</property>
+            <property name="ad-pin-offset-y">0</property>
+            <property name="ad-search-radius">25</property>
+            <property name="ad-site-id">demo</property>
+            <property name="background">transparent</property>
+            <property name="height">809</property>
+            <property name="left">26</property>
+            <property name="top">147</property>
+            <property name="width">716</property>
+        </properties>
+        <userScriptFilename>F2D56308-1502-4109-8FA5-C43EEDD1ED1D$mapViewDelegate.js</userScriptFilename>
+        <actionSequencesByEvent>
+            <dictionary>
+                <key name="annotationCalloutTapped">
+                    <actionSequenceReference>9196283E-6602-4433-933F-00941A6DCB3D</actionSequenceReference>
+                </key>
+                <key name="didReceiveResponseData">
+                    <actionSequenceReference>43C2F1A1-EEE7-4261-BA5A-87394E7FBCE8</actionSequenceReference>
+                </key>
+            </dictionary>
+        </actionSequencesByEvent>
+    </component>
+    <component internalID="8FFA4EA9-40C3-43DD-95AA-5D53F1F889A8">
+        <componentClassName>iAd.Button</componentClassName>
+        <outlet>backButton</outlet>
+        <outletNameFromTemplate>backButton</outletNameFromTemplate>
+        <templateName>iPadBackButton</templateName>
+        <properties>
+            <property name="-iap-original-size">{72, 31}</property>
+            <property name="-webkit-border-radius">15</property>
+            <property name="ad-outlet">backButton</property>
+            <property name="ad-title">Back</property>
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.5)))</property>
+            <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+            <property name="border-style">solid</property>
+            <property name="border-width">1px</property>
+            <property name="color">#3d4045</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue-Bold"/>
+            </property>
+            <property name="font-size">15px</property>
+            <property name="height">31</property>
+            <property name="left">26</property>
+            <property name="opacity">1</property>
+            <property name="padding-left">10</property>
+            <property name="padding-right">10</property>
+            <property name="text-align">center</property>
+            <property name="top">972</property>
+            <property name="width">72</property>
+        </properties>
+        <properties state="ad-disabled">
+            <property name="opacity">0.5</property>
+        </properties>
+        <properties state="ad-highlighted">
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+        </properties>
+        <actionSequencesByEvent>
+            <dictionary>
+                <key name="viewTouchUpInside">
+                    <actionSequenceReference>B50ED8E6-19B8-4C67-8962-BB91D8F8FBBA</actionSequenceReference>
+                </key>
+            </dictionary>
+        </actionSequencesByEvent>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="DB621EFF-B237-47D9-9786-02A806DB836A">
+        <name>Page Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="45E9BB23-9FF2-4EB6-9452-260EB0FF15A2">
+        <name>Page Disappear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="43C2F1A1-EEE7-4261-BA5A-87394E7FBCE8">
+        <name>javascript</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="75CD99C3-6720-439A-8055-14A4AE154A0B">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="5536DBFF-C16E-4F37-8F21-1219B9F41C43">
+                                        <actionTokenType>javascript</actionTokenType>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="9196283E-6602-4433-933F-00941A6DCB3D">
+        <name>javascript</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="D5FDB2F6-5E4A-404A-AFAF-51A2246A8275">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="42F2BA06-6BC9-42E2-BEA3-3D714D985987">
+                                        <actionTokenType>javascript</actionTokenType>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="B50ED8E6-19B8-4C67-8962-BB91D8F8FBBA">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="9078E897-56C7-48CC-85E8-5070A3C3917B">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="954A0BC0-6049-4185-933B-F7AA802784DB">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">{previous-item}</property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="viewControllerViewDidAppear">
+            <actionSequenceReference>DB621EFF-B237-47D9-9786-02A806DB836A</actionSequenceReference>
+        </key>
+        <key name="viewControllerViewWillDisappear">
+            <actionSequenceReference>45E9BB23-9FF2-4EB6-9452-260EB0FF15A2</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+</page>

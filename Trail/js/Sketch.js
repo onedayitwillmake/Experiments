@@ -98,7 +98,7 @@
 					color: 0xFF0000,
 					shading: THREE.SmoothShading,
 					blending: THREE.AdditiveBlending,
-					//wireframe: true,
+					transparent: true,
 					map: THREE.ImageUtils.loadTexture("texture.png")
 				})]);
 
@@ -139,11 +139,18 @@
 
 		var vector = new THREE.Vector3( mouse.x, mouse.y, (mouse.y+1)/2 );
 		projector.unprojectVector( vector, this._camera );
-		//console.log(vector.x, vector.y, vector.z)
+	console.log(mouse.x, mouse.y, vector.z)
+
+
+		//this._mesh.materials[0].blending = THREE.AdditiveBlending;
+		//this._mesh.materials[0].transparent = true;
+			//this._mesh.materials[0].map.needsUpdate = true;
 
 		var len = this._geometry.vertices.length;
 		for( var i = 0; i < len; i+=2) {
 			if( i === 0 ) {
+
+
 				var index = 4;
 				var range = 0.5;
 
@@ -162,7 +169,7 @@
 
 			for( var n = i; n < i+2; n++ ) {
 				var prev = n-2;
-				var glide = 0.4;
+				var glide = 0.1;
 				this._geometry.vertices[n].position.x -= (this._geometry.vertices[n].position.x - this._geometry.vertices[prev].position.x) * glide;
 				this._geometry.vertices[n].position.y -= (this._geometry.vertices[n].position.y - this._geometry.vertices[prev].position.y) * glide;
 				this._geometry.vertices[n].position.z -= (this._geometry.vertices[n].position.z - this._geometry.vertices[prev].position.z) * glide;

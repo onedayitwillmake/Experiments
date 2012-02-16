@@ -1,0 +1,32 @@
+{
+   "name": "com.apple.examples.InsideRoom",
+   "version": "1.0.0",
+   "description": "Inside Room - displays 4 walls in 3D environment",
+   "keywords": [
+       "iAd Producer",
+       "3D",
+       "Room"
+   ],
+   "maintainers": [ 
+   ],
+   "contributors": [ 
+   ],
+   "bugs": {
+   },
+   "licenses": [ 
+   ],
+   "repositories": [ 
+   ],
+   "dependencies": {
+       "com.apple.iAdProducer.iAd.View": "1.4.0",
+       "com.apple.iAdProducer.iAd.EventTriage": "1.4.0"
+   },
+   "renamedClasses": {
+   },
+   "renamedAttributeKeys": {
+   },
+   "renamedAttributeValues": {
+   },
+   "preoptimized": false,
+   "required": false
+}
