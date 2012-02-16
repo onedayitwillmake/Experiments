@@ -35,6 +35,7 @@
 
 		this._renderer = new THREE.WebGLRenderer({antialias: true});
 
+
 		this._renderer.autoClear = false;
 		this._renderer.sortObjects = true;
 		this._renderer.setClearColor(new THREE.Color(0x0), 1);
@@ -42,22 +43,22 @@
 		this._renderer.domElement.tabIndex = "1";
 		this._domElement.appendChild(this._renderer.domElement);
 
-		this._camera = new THREE.Camera( 65, width/height, 1, 5000 );
+		this._camera = new THREE.Camera( 80, width/height, 1, 5000 );
 		this._camera.position.y = 0;
 		this._camera.position.z = 1000;
 
 		this._ambientLight = new THREE.AmbientLight(0x111111);
 		this._scene.addLight(this._ambientLight);
 
-		//this._pointLight = new THREE.PointLight(0xFFFFFF, 0.5, 0);
-		//this._pointLight.position.set(0, 0, 1000);
-		//this._scene.addLight(this._pointLight);
+		this._pointLight = new THREE.PointLight(0xFFFFFF, 1, 0);
+		this._pointLight.position.set(0, 50, 3000);
+		this._scene.addLight(this._pointLight);
 
 		this.setupStats();
 
 		var geometry = new THREE.CubeGeometry( 5, 5, 5, 2, 2, 2 );
 		this._cube = new THREE.Mesh( geometry, [new THREE.MeshLambertMaterial( {
-			color: 0xFF0000,
+//			color: 0xFF,
 			shading: THREE.SmoothShading,
 
 		})] );
@@ -90,16 +91,19 @@
 
 
 
-
-		this._geometry = new THREE.PlaneGeometry(1, 1, 1, 25);
+		
+		
+		this._geometry = new THREE.PlaneGeometry(1, 1, 1, 20);
 		this._geometry.dynamic = true;
 
+	this._map = THREE.ImageUtils.loadTexture("texture.png")
 		this._mesh = new THREE.Mesh(this._geometry, [new THREE.MeshLambertMaterial({
-					color: 0xFF0000,
-					shading: THREE.SmoothShading,
-					blending: THREE.AdditiveBlending,
+					//color: 0xFF0000,
+					//shading: THREE.FlatShadding,
+					//blending: THREE.AlphaBlending,
 					transparent: true,
-					map: THREE.ImageUtils.loadTexture("texture.png")
+//					wireframe: true,
+					map: this._map	
 				})]);
 
 		this._mesh.doubleSided = true;
@@ -139,12 +143,16 @@
 
 		var vector = new THREE.Vector3( mouse.x, mouse.y, (mouse.y+1)/2 );
 		projector.unprojectVector( vector, this._camera );
-	console.log(mouse.x, mouse.y, vector.z)
+//	console.log(mouse.x, mouse.y, vector.z)
 
 
-		//this._mesh.materials[0].blending = THREE.AdditiveBlending;
-		//this._mesh.materials[0].transparent = true;
-			//this._mesh.materials[0].map.needsUpdate = true;
+var gl = sketchInstance._renderer.context;
+gl.enable( gl.BLEND );
+gl.blendEquationSeparate( gl.FUNC_ADD, gl.FUNC_ADD );
+gl.blendFuncSeparate( gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE_MINUS_SRC_ALPHA );
+//		this._mesh.materials[0].blending = THREE.AdditiveBlending;
+//		this._mesh.materials[0].transparent = true;
+//		this._mesh.materials[0].map.needsUpdate = true;
 
 		var len = this._geometry.vertices.length;
 		for( var i = 0; i < len; i+=2) {
@@ -152,16 +160,16 @@
 
 
 				var index = 4;
-				var range = 0.5;
+				var range = Math.random()*0.1 + 0.2
 
 				var vectorA = vector.clone();
-				vectorA.y -= 1;
+				vectorA.y -= range;
 				this._geometry.vertices[i].position = vectorA.clone();
 
 
 
 				var vectorB = vector.clone();
-				vectorB.y += 1;
+				vectorB.y += range;
 				this._geometry.vertices[i+1].position = vectorB.clone();
 
 				continue;
@@ -169,7 +177,7 @@
 
 			for( var n = i; n < i+2; n++ ) {
 				var prev = n-2;
-				var glide = 0.1;
+				var glide = 0.2;
 				this._geometry.vertices[n].position.x -= (this._geometry.vertices[n].position.x - this._geometry.vertices[prev].position.x) * glide;
 				this._geometry.vertices[n].position.y -= (this._geometry.vertices[n].position.y - this._geometry.vertices[prev].position.y) * glide;
 				this._geometry.vertices[n].position.z -= (this._geometry.vertices[n].position.z - this._geometry.vertices[prev].position.z) * glide;
