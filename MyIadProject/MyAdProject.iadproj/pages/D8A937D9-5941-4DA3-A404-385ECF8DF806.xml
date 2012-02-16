@@ -22,12 +22,12 @@
     <property name="buildOutActionListShouldDelayTransition">
         <true/>
     </property>
-    <property name="minimumDelayBeforeTransition">2s</property>
+    <property name="minimumDelayBeforeTransition">4.1</property>
     <property name="transition">Fade</property>
     <property name="transitionDuration">0.5</property>
 </properties>
 <lastModifiedDate>
-    <date>351,063,696.868</date>
+    <date>351,116,818.17</date>
 </lastModifiedDate>
 <associatedPages>
     <associatedPage>05DA25EB-1C58-4939-ACB6-3D72899F7C3F</associatedPage>
@@ -70,7 +70,7 @@
     </component>
     <component internalID="4B63E131-3A84-446A-8BE7-2B1A54CF4F0E">
         <componentClassName>iAd.ImageView</componentClassName>
-        <outlet>splash-cupcakes-cardinal</outlet>
+        <outlet>splash-cupcakes-flamingo2</outlet>
         <outletNameFromTemplate>image</outletNameFromTemplate>
         <templateName>Image - Internal</templateName>
         <properties>
@@ -82,7 +82,7 @@
             <property name="ad-image">
                 <assetreference>78636C1E-108E-4216-9987-CE950D897AAC</assetreference>
             </property>
-            <property name="ad-outlet">splash-cupcakes-cardinal</property>
+            <property name="ad-outlet">splash-cupcakes-flamingo2</property>
             <property name="background-position">center</property>
             <property name="background-repeat">no-repeat</property>
             <property name="background-size">100% 100%</property>
@@ -211,54 +211,6 @@
                         <actions>
                             <array>
                                 <value>
-                                    <action internalID="C4C4CDA2-8574-4FD0-9A83-7A51C744FC35">
-                                        <actionClassName>iAP.GrowAction</actionClassName>
-                                        <actionTemplateName>Grow In</actionTemplateName>
-                                        <componentID>5241E7E2-4D0F-4CE5-9A96-529AE684316F</componentID>
-                                        <properties>
-                                            <property name="delay">0.00s</property>
-                                            <property name="direction">in</property>
-                                            <property name="duration">1.00s</property>
-                                            <property name="scaleFactor">1.0</property>
-                                            <property name="timingFunction">ease</property>
-                                        </properties>
-                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
-                                    </action>
-                                </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="CB2E5796-500D-4EB6-B3C3-A78639D46CE6">
-                        <actions>
-                            <array>
-                                <value>
-                                    <action internalID="E705D8DD-F826-4F8A-B2CF-2C08580A4D79">
-                                        <actionClassName>iAP.GrowAction</actionClassName>
-                                        <actionTemplateName>Grow In</actionTemplateName>
-                                        <componentID>4B63E131-3A84-446A-8BE7-2B1A54CF4F0E</componentID>
-                                        <properties>
-                                            <property name="delay">0.00s</property>
-                                            <property name="direction">in</property>
-                                            <property name="duration">1.00s</property>
-                                            <property name="scaleFactor">1.0</property>
-                                            <property name="timingFunction">ease</property>
-                                        </properties>
-                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
-                                    </action>
-                                </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="BD54B578-A0A4-401A-BFDF-811497C13022">
-                        <actions>
-                            <array>
-                                <value>
                                     <action internalID="10C5E00F-5999-46D1-8CAF-DAE7C46F9343">
                                         <actionClassName>iAP.GrowAction</actionClassName>
                                         <actionTemplateName>Grow In</actionTemplateName>
@@ -273,22 +225,13 @@
                                         <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
                                     </action>
                                 </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="6699BE74-869C-4231-AD12-E21E33B623C7">
-                        <actions>
-                            <array>
                                 <value>
-                                    <action internalID="61B47FAF-958B-4AB9-930F-5A7340EECCEC">
+                                    <action internalID="E705D8DD-F826-4F8A-B2CF-2C08580A4D79">
                                         <actionClassName>iAP.GrowAction</actionClassName>
                                         <actionTemplateName>Grow In</actionTemplateName>
-                                        <componentID>045DDEDE-D1E4-4524-A8A8-46AF9261BE9C</componentID>
+                                        <componentID>4B63E131-3A84-446A-8BE7-2B1A54CF4F0E</componentID>
                                         <properties>
-                                            <property name="delay">0.00s</property>
+                                            <property name="delay">0.10s</property>
                                             <property name="direction">in</property>
                                             <property name="duration">1.00s</property>
                                             <property name="scaleFactor">1.0</property>
@@ -297,22 +240,43 @@
                                         <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
                                     </action>
                                 </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="7B545990-E558-438E-A2C2-423DFB186833">
-                        <actions>
-                            <array>
+                                <value>
+                                    <action internalID="61B47FAF-958B-4AB9-930F-5A7340EECCEC">
+                                        <actionClassName>iAP.GrowAction</actionClassName>
+                                        <actionTemplateName>Grow In</actionTemplateName>
+                                        <componentID>045DDEDE-D1E4-4524-A8A8-46AF9261BE9C</componentID>
+                                        <properties>
+                                            <property name="delay">0.20s</property>
+                                            <property name="direction">in</property>
+                                            <property name="duration">1.00s</property>
+                                            <property name="scaleFactor">1.0</property>
+                                            <property name="timingFunction">ease</property>
+                                        </properties>
+                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
+                                    </action>
+                                </value>
+                                <value>
+                                    <action internalID="C4C4CDA2-8574-4FD0-9A83-7A51C744FC35">
+                                        <actionClassName>iAP.GrowAction</actionClassName>
+                                        <actionTemplateName>Grow In</actionTemplateName>
+                                        <componentID>5241E7E2-4D0F-4CE5-9A96-529AE684316F</componentID>
+                                        <properties>
+                                            <property name="delay">0.30s</property>
+                                            <property name="direction">in</property>
+                                            <property name="duration">1.00s</property>
+                                            <property name="scaleFactor">1.0</property>
+                                            <property name="timingFunction">ease</property>
+                                        </properties>
+                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jAAAAAAAAAABfEBZzY2FsZTNkKDAuMDEsIDAuMDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSM/8AAAAAAAAF8QEHNjYWxlM2QoMSwgMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFKAU8BWgFjAXkBfQGKAZMBmAGuAbEBxwHMAc4B0AHXAdkB2wHdAd8B4QHoAeoB7QHvAfEB9AH2AfgCAAIUAh0CMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
+                                    </action>
+                                </value>
                                 <value>
                                     <action internalID="6148C8C6-A292-4F5E-BFF3-DE9C92000975">
                                         <actionClassName>iAP.GrowAction</actionClassName>
                                         <actionTemplateName>Grow In</actionTemplateName>
                                         <componentID>1D52F30B-02D6-40B5-AADA-7358D2F75D27</componentID>
                                         <properties>
-                                            <property name="delay">0.00s</property>
+                                            <property name="delay">0.40s</property>
                                             <property name="direction">in</property>
                                             <property name="duration">1.00s</property>
                                             <property name="scaleFactor">1.0</property>
@@ -331,54 +295,6 @@
                         <actions>
                             <array>
                                 <value>
-                                    <action internalID="8D504430-2998-4320-B07A-AF5D30EA5A67">
-                                        <actionClassName>iAP.ShrinkAction</actionClassName>
-                                        <actionTemplateName>Shrink Out</actionTemplateName>
-                                        <componentID>5241E7E2-4D0F-4CE5-9A96-529AE684316F</componentID>
-                                        <properties>
-                                            <property name="delay">0.00s</property>
-                                            <property name="direction">out</property>
-                                            <property name="duration">1.00s</property>
-                                            <property name="scaleFactor">1.0</property>
-                                            <property name="timingFunction">ease</property>
-                                        </properties>
-                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
-                                    </action>
-                                </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="8146636D-94BB-47DE-9269-5C65DC192F57">
-                        <actions>
-                            <array>
-                                <value>
-                                    <action internalID="1BBEE8E3-0636-435E-88D9-6259DE171FB7">
-                                        <actionClassName>iAP.ShrinkAction</actionClassName>
-                                        <actionTemplateName>Shrink Out</actionTemplateName>
-                                        <componentID>4B63E131-3A84-446A-8BE7-2B1A54CF4F0E</componentID>
-                                        <properties>
-                                            <property name="delay">0.00s</property>
-                                            <property name="direction">out</property>
-                                            <property name="duration">1.00s</property>
-                                            <property name="scaleFactor">1.0</property>
-                                            <property name="timingFunction">ease</property>
-                                        </properties>
-                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
-                                    </action>
-                                </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="23E08343-197B-4BA3-BC1E-01BF1A666AFC">
-                        <actions>
-                            <array>
-                                <value>
                                     <action internalID="08F86244-A418-4D4D-8A28-B918D0344477">
                                         <actionClassName>iAP.ShrinkAction</actionClassName>
                                         <actionTemplateName>Shrink Out</actionTemplateName>
@@ -393,22 +309,13 @@
                                         <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
                                     </action>
                                 </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="06A99CB4-9EE9-4262-A9FC-52153F3009E4">
-                        <actions>
-                            <array>
                                 <value>
-                                    <action internalID="579BD35E-5EA2-483B-AAE3-B1268379B6F5">
+                                    <action internalID="1BBEE8E3-0636-435E-88D9-6259DE171FB7">
                                         <actionClassName>iAP.ShrinkAction</actionClassName>
                                         <actionTemplateName>Shrink Out</actionTemplateName>
-                                        <componentID>045DDEDE-D1E4-4524-A8A8-46AF9261BE9C</componentID>
+                                        <componentID>4B63E131-3A84-446A-8BE7-2B1A54CF4F0E</componentID>
                                         <properties>
-                                            <property name="delay">0.00s</property>
+                                            <property name="delay">0.10s</property>
                                             <property name="direction">out</property>
                                             <property name="duration">1.00s</property>
                                             <property name="scaleFactor">1.0</property>
@@ -417,22 +324,43 @@
                                         <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
                                     </action>
                                 </value>
-                            </array>
-                        </actions>
-                        <delay>0.000000</delay>
-                    </actionGroup>
-                </value>
-                <value>
-                    <actionGroup internalID="008B64A5-1222-4FFD-B48C-FBB767AE5323">
-                        <actions>
-                            <array>
+                                <value>
+                                    <action internalID="579BD35E-5EA2-483B-AAE3-B1268379B6F5">
+                                        <actionClassName>iAP.ShrinkAction</actionClassName>
+                                        <actionTemplateName>Shrink Out</actionTemplateName>
+                                        <componentID>045DDEDE-D1E4-4524-A8A8-46AF9261BE9C</componentID>
+                                        <properties>
+                                            <property name="delay">0.20s</property>
+                                            <property name="direction">out</property>
+                                            <property name="duration">1.00s</property>
+                                            <property name="scaleFactor">1.0</property>
+                                            <property name="timingFunction">ease</property>
+                                        </properties>
+                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
+                                    </action>
+                                </value>
+                                <value>
+                                    <action internalID="8D504430-2998-4320-B07A-AF5D30EA5A67">
+                                        <actionClassName>iAP.ShrinkAction</actionClassName>
+                                        <actionTemplateName>Shrink Out</actionTemplateName>
+                                        <componentID>5241E7E2-4D0F-4CE5-9A96-529AE684316F</componentID>
+                                        <properties>
+                                            <property name="delay">0.30s</property>
+                                            <property name="direction">out</property>
+                                            <property name="duration">1.00s</property>
+                                            <property name="scaleFactor">1.0</property>
+                                            <property name="timingFunction">ease</property>
+                                        </properties>
+                                        <keyframeSets>YnBsaXN0MDDUAQIDBAUGW1xYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIDhIbHB0hJygwMTIzNDs/QkhQUVJTVFhVJG51bGzSCQoLDFYkY2xhc3NaTlMub2JqZWN0c4AYoQ2AAtIPCRARXxAXa2V5ZnJhbWVzQnlQb3NpdGlvbkRpY3SAA4AX0wkTChQVGFdOUy5rZXlzgA6iFheABIAFohkagAaAEBAAEScQ0h4JHyBfEBFhdHRyaWJ1dGVzQnlTdGF0ZYAHgA/TCRMKFCMlgA6hJIAIoSaACVlhZC1ub3JtYWzTCRMKFCotgA6iKyyACoALoi4vgAyADVdvcGFjaXR5XxARLXdlYmtpdC10cmFuc2Zvcm0jP/AAAAAAAABfEBBzY2FsZTNkKDEsIDEsIDEp0jU2NzhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjNzk6XE5TRGljdGlvbmFyeVhOU09iamVjdNI1Njw9XxATU1RBbmltYXRpb25LZXlmcmFtZaI+Ol8QE1NUQW5pbWF0aW9uS2V5ZnJhbWXSHglAIIARgA/TCRMKFERGgA6hJIAIoUeAEtMJEwoUSk2ADqJLTIATgBSiTk+AFYAWV29wYWNpdHlfEBEtd2Via2l0LXRyYW5zZm9ybSMAAAAAAAAAAF8QFnNjYWxlM2QoMC4wMSwgMC4wMSwgMSnSNTZVVl8QFlNUQW5pbWF0aW9uS2V5ZnJhbWVTZXSiVzpfEBZTVEFuaW1hdGlvbktleWZyYW1lU2V00jU2WVpXTlNBcnJheaJZOl8QD05TS2V5ZWRBcmNoaXZlctFdXlRyb290gAEACAARABoAIwAtADIANwBTAFkAXgBlAHAAcgB0AHYAewCVAJcAmQCgAKgAqgCtAK8AsQC0ALYAuAC6AL0AwgDWANgA2gDhAOMA5QDnAOkA6wD1APwA/gEBAQMBBQEIAQoBDAEUASgBMQFEAUkBVAFdAXMBdwGEAY0BkgGoAasBwQHGAcgBygHRAdMB1QHXAdkB2wHiAeQB5wHpAesB7gHwAfIB+gIOAhcCMAI1Ak4CUQJqAm8CdwJ6AowCjwKUAAAAAAAAAgEAAAAAAAAAXwAAAAAAAAAAAAAAAAAAApY=</keyframeSets>
+                                    </action>
+                                </value>
                                 <value>
                                     <action internalID="A89EFBE5-2DD7-492C-A372-8D30C23B6324">
                                         <actionClassName>iAP.ShrinkAction</actionClassName>
                                         <actionTemplateName>Shrink Out</actionTemplateName>
                                         <componentID>1D52F30B-02D6-40B5-AADA-7358D2F75D27</componentID>
                                         <properties>
-                                            <property name="delay">0.00s</property>
+                                            <property name="delay">0.40s</property>
                                             <property name="direction">out</property>
                                             <property name="duration">1.00s</property>
                                             <property name="scaleFactor">1.0</property>
