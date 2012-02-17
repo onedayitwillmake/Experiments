@@ -1,0 +1,106 @@
+<style internalID="FA74F67C-C543-4418-9059-195677F45E61" originalStyleID="5629D915-5BB9-4E33-A553-5D69B96C596D">
+<name>Menu Button (modified)</name>
+<includedAttributeKeys>
+    <key>-iap-reflection-offset</key>
+    <key>-iap-reflection-size</key>
+    <key>-iap-reflection-strength</key>
+    <key>-webkit-border-radius</key>
+    <key>-webkit-box-reflect</key>
+    <key>-webkit-box-shadow</key>
+    <key>-webkit-text-stroke-color</key>
+    <key>-webkit-text-stroke-width</key>
+    <key>ad-vertical-alignment</key>
+    <key>background</key>
+    <key>background-color</key>
+    <key>background-image</key>
+    <key>background-repeat</key>
+    <key>background-size</key>
+    <key>border-color</key>
+    <key>border-style</key>
+    <key>border-width</key>
+    <key>color</key>
+    <key>font-object</key>
+    <key>font-size</key>
+    <key>letter-spacing</key>
+    <key>line-height</key>
+    <key>opacity</key>
+    <key>text-align</key>
+    <key>text-shadow</key>
+</includedAttributeKeys>
+<properties>
+    <property name="-webkit-border-radius">15</property>
+    <property name="-webkit-box-reflect">none</property>
+    <property name="-webkit-box-shadow">none</property>
+    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+    <property name="-webkit-text-stroke-width">0px</property>
+    <property name="background-color">rgba(0, 0, 0, 0)</property>
+    <property name="background-image">
+        <assetreference>DDA9ABA8-8383-47F8-9328-F536BBD34048</assetreference>
+    </property>
+    <property name="background-repeat">no-repeat</property>
+    <property name="background-size">160px 70px</property>
+    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="color">#3e2e29</property>
+    <property name="font-object">
+        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+    </property>
+    <property name="font-size">20px</property>
+    <property name="letter-spacing">normal</property>
+    <property name="line-height">normal</property>
+    <property name="opacity">1</property>
+    <property name="text-align">center</property>
+    <property name="text-shadow">none</property>
+</properties>
+<properties state="ad-disabled">
+    <property name="-webkit-border-radius">15</property>
+    <property name="-webkit-box-reflect">none</property>
+    <property name="-webkit-box-shadow">none</property>
+    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+    <property name="-webkit-text-stroke-width">0px</property>
+    <property name="background-color">rgba(0, 0, 0, 0)</property>
+    <property name="background-image">
+        <assetreference>DDA9ABA8-8383-47F8-9328-F536BBD34048</assetreference>
+    </property>
+    <property name="background-repeat">no-repeat</property>
+    <property name="background-size">160px 70px</property>
+    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="color">#3e2e29</property>
+    <property name="font-object">
+        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+    </property>
+    <property name="font-size">20px</property>
+    <property name="letter-spacing">normal</property>
+    <property name="line-height">normal</property>
+    <property name="opacity">0.5</property>
+    <property name="text-align">center</property>
+    <property name="text-shadow">none</property>
+</properties>
+<properties state="ad-highlighted">
+    <property name="-webkit-border-radius">15</property>
+    <property name="-webkit-box-reflect">none</property>
+    <property name="-webkit-box-shadow">none</property>
+    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+    <property name="-webkit-text-stroke-width">0px</property>
+    <property name="background-image">
+        <assetreference>5534BEA2-FB50-414A-BDEE-05A0FEDF94F9</assetreference>
+    </property>
+    <property name="background-size">160px 70px</property>
+    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="color">#3e2e29</property>
+    <property name="font-object">
+        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+    </property>
+    <property name="font-size">20px</property>
+    <property name="letter-spacing">normal</property>
+    <property name="line-height">normal</property>
+    <property name="opacity">1</property>
+    <property name="text-align">center</property>
+    <property name="text-shadow">none</property>
+</properties>
+</style>

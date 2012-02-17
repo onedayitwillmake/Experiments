@@ -1,0 +1,645 @@
+<bannerPage internalID="CB6AC055-F86B-44B4-91D0-B4A7ECB7E620">
+<name>Banner 1</name>
+<pageRole>6</pageRole>
+<contentState>3</contentState>
+<orientation>2</orientation>
+<pageClassName>iAP.BannerViewController</pageClassName>
+<templateName>Image and Text Banner</templateName>
+<preloadSettings>YnBsaXN0MDDUAQIDBAUGYGFYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFQcIHyAhIiMkJSYnLS4vNjxCSE5UWlUkbnVsbNMJCgsMDRZWJGNsYXNzV05TLmtleXNaTlMub2JqZWN0c4ANqA4PEBESExQVgAKAA4AEgAWABoAHgAiACagXGBkaGxwdHoAKgA6AD4AQgBGAEoATgBRfECQyMkIxNkIzMi0wM0ZBLTRGQ0YtQkNFNC1GMEJCMURERTJFQzRfECRDNEQ0NkY5Ni1EMjc2LTQyOEMtOTlCMS00REE3M0RBRjMyMjhfECQxRTEyNDNENi00NjVBLTQ4OTItQTk4QS02QjREQThGNTBERDhfECRBNTQwM0I5Qi03MTQzLTQ2M0MtOThBQS0yMjU1QTA0RTRFNDhfECRBOUI5MDEwRi0xMjIzLTQ5QTMtOEU5MC1GNzAyNkFFODI0QzVfECRCNTk3QjVBQS1FQzVFLTQyRjgtODY3Mi00OEZFQkYzMjZGNjlfECQ4QzY4QTRCNy01NUQ0LTRENUEtQURDRi0wNTYyNzYxMkVGQTdfECRGQTAzMkVDRi04NzU4LTQzRTgtQURENi1CNkZFOTZBNDE3NELTCQoLDCkrgA2hKoALoSyADF5kZWZhdWx0U2V0dGluZwjSMDEyM1okY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxlRGljdGlvbmFyeaMyNDVcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00wkKCww4OoANoSqAC6EsgAzTCQoLDD5AgA2hKoALoSyADNMJCgsMREaADaEqgAuhLIAM0wkKCwxKTIANoSqAC6EsgAzTCQoLDFBSgA2hKoALoSyADNMJCgsMVliADaEqgAuhLIAM0wkKCwxcXoANoSqAC6EsgAxfEA9OU0tleWVkQXJjaGl2ZXLRYmNUcm9vdIABAAgAEQAaACMALQAyADcATwBVAFwAYwBrAHYAeACBAIMAhQCHAIkAiwCNAI8AkQCaAJwAngCgAKIApACmAKgAqgDRAPgBHwFGAW0BlAG7AeIB6QHrAe0B7wHxAfMCAgIDAggCEwIcAjICNgJDAkwCUwJVAlcCWQJbAl0CZAJmAmgCagJsAm4CdQJ3AnkCewJ9An8ChgKIAooCjAKOApAClwKZApsCnQKfAqECqAKqAqwCrgKwArICuQK7Ar0CvwLBAsMC1QLYAt0AAAAAAAACAQAAAAAAAABkAAAAAAAAAAAAAAAAAAAC3w==</preloadSettings>
+<supportedOrientations>
+    <integer>1</integer>
+    <integer>2</integer>
+</supportedOrientations>
+<properties>
+    <property name="-iap-gradient-angle">
+        <real>90</real>
+    </property>
+    <property name="-iap-saved-gradient">-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 384, color-stop(0%, #000000), color-stop(100%, #ffffff))</property>
+    <property name="background">-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 384, color-stop(0%, #fefeed), color-stop(100%, #f0d5b8))</property>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,063,050.882</date>
+</lastModifiedDate>
+<components>
+    <component internalID="A904ECA3-8426-4ED2-9EF0-A5378575C132">
+        <componentClassName>iAd.Label</componentClassName>
+        <outlet>CUPCAKE AVIARY</outlet>
+        <outletNameFromTemplate>label</outletNameFromTemplate>
+        <templateName>Label</templateName>
+        <properties>
+            <property name="-iap-box-shadow-angle-text-shadow">
+                <real>118.674</real>
+            </property>
+            <property name="-iap-box-shadow-distance-text-shadow">
+                <real>0</real>
+            </property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="ad-number-of-lines">0</property>
+            <property name="ad-outlet">CUPCAKE AVIARY</property>
+            <property name="ad-text">CUPCAKE AVIARY
+</property>
+            <property name="ad-vertical-alignment">top</property>
+            <property name="background-size">auto</property>
+            <property name="color">#3e2e29</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+            </property>
+            <property name="font-size">30px</property>
+            <property name="height">
+                <real>43</real>
+            </property>
+            <property name="left">
+                <real>0</real>
+            </property>
+            <property name="text-align">center</property>
+            <property name="top">
+                <real>2</real>
+            </property>
+            <property name="width">
+                <real>363</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>43</real>
+            </property>
+            <property name="left">
+                <real>120</real>
+            </property>
+            <property name="top">
+                <real>2</real>
+            </property>
+            <property name="width">
+                <real>363</real>
+            </property>
+        </properties>
+        <style>
+            <stylereference>59BEEB7A-2BB5-4C72-BAE7-C779515C2833</stylereference>
+        </style>
+    </component>
+    <component internalID="D81F20D4-01EF-4EC2-90A1-86E3FC44046B">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-circle</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>8C68A4B7-55D4-4D5A-ADCF-05627612EFA7</assetreference>
+            </property>
+            <property name="ad-outlet">banner-circle</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>66</real>
+            </property>
+            <property name="left">
+                <real>350</real>
+            </property>
+            <property name="top">
+                <real>0</real>
+            </property>
+            <property name="width">
+                <real>413</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="background-position">center center</property>
+            <property name="height">
+                <real>63</real>
+            </property>
+            <property name="left">
+                <real>544.289</real>
+            </property>
+            <property name="top">
+                <real>0</real>
+            </property>
+            <property name="width">
+                <real>392.422</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="1FCBDD7F-E076-4AE3-BFF0-0241E8D8552C">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-7</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>C4D46F96-D276-428C-99B1-4DA73DAF3228</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-7</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>658</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>840</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="2098D28C-82A4-4246-BA99-B83B8D0EE038">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-6</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>A5403B9B-7143-463C-98AA-2255A04E4E48</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-6</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>620</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>799</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="233B9811-F99E-46BE-96CD-2A2CB2BAE269">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-1</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>22B16B32-03FA-4FCF-BCE4-F0BB1DDE2EC4</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-1</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>375</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>562</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="FFBDE2D0-2913-4338-8D2C-D1052D5D46ED">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-2</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>A9B9010F-1223-49A3-8E90-F7026AE824C5</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-2</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>412</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>601</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="C35AC95D-0D05-4CE9-9112-CA5ACFBB4FB0">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-5</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>FA032ECF-8758-43E8-ADD6-B6FE96A4174B</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-5</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>460</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>646</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="E5C592EF-0C06-47D6-A7D7-8193043A84B7">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-3</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>1E1243D6-465A-4892-A98A-6B4DA8F50DD8</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-3</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>568</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>749</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="1C7F73D0-56E4-4056-A577-D57FC4B9266A">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>banner-cupcake-4</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image - Internal</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">true</property>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{0, 0}</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>B597B5AA-EC5E-42F8-8672-48FEBF326F69</assetreference>
+            </property>
+            <property name="ad-outlet">banner-cupcake-4</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">100% 100%</property>
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>508</real>
+            </property>
+            <property name="top">
+                <real>-23</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>90</real>
+            </property>
+            <property name="left">
+                <real>690</real>
+            </property>
+            <property name="top">
+                <real>-19</real>
+            </property>
+            <property name="width">
+                <real>78</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="87BCBD26-C789-4E62-BE28-42FF62F36285">
+        <componentClassName>iAd.Label</componentClassName>
+        <outlet>label</outlet>
+        <outletNameFromTemplate>label</outletNameFromTemplate>
+        <templateName>Label</templateName>
+        <properties>
+            <property name="-iap-has-set-landscape-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-landscape-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-origin">
+                <true/>
+            </property>
+            <property name="-iap-has-set-portrait-frame-size">
+                <true/>
+            </property>
+            <property name="-iap-original-size">{120, 30}</property>
+            <property name="ad-number-of-lines">0</property>
+            <property name="ad-outlet">label</property>
+            <property name="ad-text">LET YOUR TASTEUDS TAKE FLIGHT</property>
+            <property name="color">#bd5438</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue"/>
+            </property>
+            <property name="font-size">16px</property>
+            <property name="height">
+                <real>30</real>
+            </property>
+            <property name="left">
+                <real>8</real>
+            </property>
+            <property name="text-align">center</property>
+            <property name="top">
+                <real>33</real>
+            </property>
+            <property name="width">
+                <real>342</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">
+                <real>30</real>
+            </property>
+            <property name="left">
+                <real>127</real>
+            </property>
+            <property name="top">
+                <real>33</real>
+            </property>
+            <property name="width">
+                <real>342</real>
+            </property>
+        </properties>
+        <style>
+            <stylereference>B455323A-3B9A-4F0E-BAD5-E3F54C514E5E</stylereference>
+        </style>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="BBB8B71C-569D-4489-AA5A-6A3B6B6DDCC3">
+        <name>Banner Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="bannerDidAppear">
+            <actionSequenceReference>BBB8B71C-569D-4489-AA5A-6A3B6B6DDCC3</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+<bannerType>2</bannerType>
+<listIndex>0</listIndex>
+</bannerPage>

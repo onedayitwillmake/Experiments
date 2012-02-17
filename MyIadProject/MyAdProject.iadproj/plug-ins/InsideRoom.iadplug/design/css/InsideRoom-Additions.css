@@ -1,0 +1,8 @@
+.inside-room {
+}
+
+/* enable transitions */
+.inside-room > .ad-hosting-layer {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.25s !important;
+}

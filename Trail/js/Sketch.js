@@ -35,6 +35,7 @@
 
 		this._renderer = new THREE.WebGLRenderer({antialias: true});
 
+
 		this._renderer.autoClear = false;
 		this._renderer.sortObjects = true;
 		this._renderer.setClearColor(new THREE.Color(0x0), 1);
@@ -42,22 +43,28 @@
 		this._renderer.domElement.tabIndex = "1";
 		this._domElement.appendChild(this._renderer.domElement);
 
-		this._camera = new THREE.Camera( 65, width/height, 1, 5000 );
+		this._camera = new THREE.Camera( 80, width/height, 1, 5000 );
 		this._camera.position.y = 0;
 		this._camera.position.z = 2000;
 
 		this._ambientLight = new THREE.AmbientLight(0x111111);
 		this._scene.addLight(this._ambientLight);
 
+<<<<<<< HEAD
  	this._pointLight = new THREE.PointLight(0xFFFFFF, 1, 0);
 		this._pointLight.position.set(0, 10, this._camera.position.z);
  		this._scene.addLight(this._pointLight);
+=======
+		this._pointLight = new THREE.PointLight(0xFFFFFF, 1, 0);
+		this._pointLight.position.set(0, 50, 3000);
+		this._scene.addLight(this._pointLight);
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 
 		this.setupStats();
 
 		var geometry = new THREE.CubeGeometry( 10, 10, 10, 1, 1, 1 );
 		this._cube = new THREE.Mesh( geometry, [new THREE.MeshLambertMaterial( {
-			color: 0xFF0000,
+//			color: 0xFF,
 			shading: THREE.SmoothShading,
 
 		})] );
@@ -90,11 +97,19 @@
 
 
 
+<<<<<<< HEAD
 
 		this._geometry = new THREE.PlaneGeometry(1,1,1, 200);
+=======
+		
+		
+		this._geometry = new THREE.PlaneGeometry(1, 1, 1, 20);
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 		this._geometry.dynamic = true;
 
+	this._map = THREE.ImageUtils.loadTexture("texture.png")
 		this._mesh = new THREE.Mesh(this._geometry, [new THREE.MeshLambertMaterial({
+<<<<<<< HEAD
 					color: 0xFF00FF,
 // 					shading: THREE.FlatShading,
   					blending: THREE.AlphaBlending,
@@ -102,6 +117,14 @@
 //	  				depthTest: true,
 	  				wireframe: true,
 	 				map: THREE.ImageUtils.loadTexture("texture.png")
+=======
+					//color: 0xFF0000,
+					//shading: THREE.FlatShadding,
+					//blending: THREE.AlphaBlending,
+					transparent: true,
+//					wireframe: true,
+					map: this._map	
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 				})]);
 
 		this._mesh.doubleSided = true;
@@ -141,11 +164,24 @@
 
 		var vector = new THREE.Vector3( mouse.x, mouse.y, (mouse.y+1)/2 );
 		projector.unprojectVector( vector, this._camera );
+<<<<<<< HEAD
 
 
   		this._mesh.materials[0].blending = THREE.AlphaBlending;
  	 	this._mesh.materials[0].transparent = true;
  		this._mesh.materials[0].map.needsUpdate = true;
+=======
+//	console.log(mouse.x, mouse.y, vector.z)
+
+
+var gl = sketchInstance._renderer.context;
+gl.enable( gl.BLEND );
+gl.blendEquationSeparate( gl.FUNC_ADD, gl.FUNC_ADD );
+gl.blendFuncSeparate( gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE_MINUS_SRC_ALPHA );
+//		this._mesh.materials[0].blending = THREE.AdditiveBlending;
+//		this._mesh.materials[0].transparent = true;
+//		this._mesh.materials[0].map.needsUpdate = true;
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 
 		var len = this._geometry.vertices.length;
 		for( var i = 0; i < len; i+=2) {
@@ -153,7 +189,11 @@
 
 
 				var index = 4;
+<<<<<<< HEAD
 				var range = Math.random() * 2;
+=======
+				var range = Math.random()*0.1 + 0.2
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 
 				var vectorA = vector.clone();
 				vectorA.y -= range;
@@ -168,7 +208,11 @@
 
 			for( var n = i; n < i+2; n++ ) {
 				var prev = n-2;
+<<<<<<< HEAD
 				var glide = 0.5;
+=======
+				var glide = 0.2;
+>>>>>>> 7d8d71383dc35d2d743ed4f53c45396ba099330a
 				this._geometry.vertices[n].position.x -= (this._geometry.vertices[n].position.x - this._geometry.vertices[prev].position.x) * glide;
 				this._geometry.vertices[n].position.y -= (this._geometry.vertices[n].position.y - this._geometry.vertices[prev].position.y) * glide;
 				this._geometry.vertices[n].position.z -= (this._geometry.vertices[n].position.z - this._geometry.vertices[prev].position.z) * glide;

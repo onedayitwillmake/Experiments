@@ -1,0 +1,641 @@
+<page internalID="CDF3E8E2-ECA9-4864-85FF-2B559D6D2E3F">
+<name>Menu</name>
+<pageRole>5</pageRole>
+<contentState>3</contentState>
+<orientation>1</orientation>
+<pageClassName>iAP.ViewController</pageClassName>
+<templateName>Buttons</templateName>
+<preloadSettings>YnBsaXN0MDDUAQIDBAUGMzRYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKsHCBUWFxgeHyAnLVUkbnVsbNMJCgsMDRFWJGNsYXNzV05TLmtleXNaTlMub2JqZWN0c4AIow4PEIACgAOABKMSExSABYAJgApfECREQTc5QjIyMS02NTc4LTQzRUQtQjZBMC1EQjY3N0UxMDM5NjhfECQ4M0VENUU3Ny04QjYwLTRBMTAtOTdCQS0zRjAxRTEyRTY5MUJfECRDM0UxQjkwNC0yOUMxLTREQzgtQTk3Ni05Q0Q2NENERjlFRjLTCQoLDBocgAihG4AGoR2AB15kZWZhdWx0U2V0dGluZwjSISIjJFokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxlRGljdGlvbmFyeaMjJSZcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00wkKCwwpK4AIoRuABqEdgAfTCQoLDC8xgAihG4AGoR2AB18QD05TS2V5ZWRBcmNoaXZlctE1NlRyb290gAEACAARABoAIwAtADIANwBDAEkAUABXAF8AagBsAHAAcgB0AHYAegB8AH4AgACnAM4A9QD8AP4BAAECAQQBBgEVARYBGwEmAS8BRQFJAVYBXwFmAWgBagFsAW4BcAF3AXkBewF9AX8BgQGTAZYBmwAAAAAAAAIBAAAAAAAAADcAAAAAAAAAAAAAAAAAAAGd</preloadSettings>
+<supportedOrientations>
+    <integer>1</integer>
+</supportedOrientations>
+<properties>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,149,270.216</date>
+</lastModifiedDate>
+<destinationPages>
+    <destinationPage>28EB4909-958E-4522-B6AB-473ABBD23595</destinationPage>
+    <destinationPage>F2D56308-1502-4109-8FA5-C43EEDD1ED1D</destinationPage>
+    <destinationPage>E03F37A0-B361-4531-8B8F-AC905152DE0B</destinationPage>
+    <destinationPage>7E228BB3-37BC-49B4-BC07-CA63BC858A41</destinationPage>
+</destinationPages>
+<components>
+    <component internalID="3B148A5A-2792-4D2F-A9E7-5D2A099ACF3D">
+        <componentClassName>iAd.ImageView</componentClassName>
+        <outlet>image</outlet>
+        <outletNameFromTemplate>image</outletNameFromTemplate>
+        <templateName>Image</templateName>
+        <properties>
+            <property name="-iap-aspect-ratio-locked">false</property>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-auto-sized">false</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-image">
+                <assetreference>DA79B221-6578-43ED-B6A0-DB677E103968</assetreference>
+            </property>
+            <property name="ad-outlet">image</property>
+            <property name="background-position">center</property>
+            <property name="background-repeat">no-repeat</property>
+            <property name="background-size">768px 323px</property>
+            <property name="height">323px</property>
+            <property name="left">
+                <real>0</real>
+            </property>
+            <property name="top">
+                <real>0</real>
+            </property>
+            <property name="width">
+                <real>768</real>
+            </property>
+        </properties>
+    </component>
+    <component internalID="1BA20B20-1F99-44D8-8F83-E54D04B0CB7A">
+        <componentClassName>iAd.View</componentClassName>
+        <outlet>view</outlet>
+        <outletNameFromTemplate>view</outletNameFromTemplate>
+        <templateName>View</templateName>
+        <properties>
+            <property name="-iap-original-size">{280, 280}</property>
+            <property name="-webkit-box-sizing">border-box</property>
+            <property name="ad-outlet">view</property>
+            <property name="background">-webkit-gradient(linear, left top, left bottom, color-stop(0%, #594a45), color-stop(100%, #443530))</property>
+            <property name="height">500px</property>
+            <property name="left">0px</property>
+            <property name="top">
+                <real>524</real>
+            </property>
+            <property name="width">768px</property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">280</property>
+            <property name="width">280</property>
+        </properties>
+        <children>
+            <component internalID="320F8CA3-8E72-4586-9077-D35F835F2DD2">
+                <componentClassName>iAd.ImageView</componentClassName>
+                <outlet>horiz-dots</outlet>
+                <outletNameFromTemplate>image</outletNameFromTemplate>
+                <templateName>Image - Internal</templateName>
+                <properties>
+                    <property name="-iap-aspect-ratio-locked">true</property>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-asset-droppable">true</property>
+                    <property name="ad-auto-sized">false</property>
+                    <property name="ad-has-hidpi-version">true</property>
+                    <property name="ad-image">
+                        <assetreference>C3E1B904-29C1-4DC8-A976-9CD64CDF9EF2</assetreference>
+                    </property>
+                    <property name="ad-outlet">horiz-dots</property>
+                    <property name="background-position">center</property>
+                    <property name="background-repeat">no-repeat</property>
+                    <property name="background-size">100% 100%</property>
+                    <property name="height">
+                        <real>20</real>
+                    </property>
+                    <property name="left">
+                        <real>0</real>
+                    </property>
+                    <property name="top">0px</property>
+                    <property name="width">
+                        <real>768</real>
+                    </property>
+                </properties>
+            </component>
+            <component internalID="93C603B4-CD9B-43CD-BF0D-6BBD350F5E32">
+                <componentClassName>iAd.ImageView</componentClassName>
+                <outlet>horiz-dots2</outlet>
+                <outletNameFromTemplate>image</outletNameFromTemplate>
+                <templateName>Image - Internal</templateName>
+                <properties>
+                    <property name="-iap-aspect-ratio-locked">true</property>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-asset-droppable">true</property>
+                    <property name="ad-auto-sized">false</property>
+                    <property name="ad-has-hidpi-version">true</property>
+                    <property name="ad-image">
+                        <assetreference>C3E1B904-29C1-4DC8-A976-9CD64CDF9EF2</assetreference>
+                    </property>
+                    <property name="ad-outlet">horiz-dots2</property>
+                    <property name="background-position">center</property>
+                    <property name="background-repeat">no-repeat</property>
+                    <property name="background-size">100% 100%</property>
+                    <property name="height">
+                        <real>20</real>
+                    </property>
+                    <property name="left">0px</property>
+                    <property name="top">477px</property>
+                    <property name="width">
+                        <real>768</real>
+                    </property>
+                </properties>
+            </component>
+        </children>
+    </component>
+    <component internalID="AC4C4035-0FFD-4E31-9A49-3D1621AFF428">
+        <componentClassName>iAP.Menu</componentClassName>
+        <outlet>menu</outlet>
+        <outletNameFromTemplate>menu</outletNameFromTemplate>
+        <templateName>Simple Menu</templateName>
+        <properties>
+            <property name="ad-button-height">50</property>
+            <property name="ad-button-padding">16</property>
+            <property name="ad-button-template">Menu Button</property>
+            <property name="ad-destinations">[{"destination":"Page1","name":"Page 1","destinationID":"28EB4909-958E-4522-B6AB-473ABBD23595"},{"destination":"Page2","name":"Page 2","destinationID":"F2D56308-1502-4109-8FA5-C43EEDD1ED1D"},{"destination":"Page3","name":"Page 3","destinationID":"E03F37A0-B361-4531-8B8F-AC905152DE0B"}]</property>
+            <property name="ad-is-menu">true</property>
+            <property name="ad-outlet">menu</property>
+            <property name="height">182px</property>
+            <property name="left">211px</property>
+            <property name="top">567px</property>
+            <property name="width">341px</property>
+        </properties>
+        <children>
+            <component internalID="013DA625-18EA-4ECE-94DC-11511F154367">
+                <componentClassName>iAd.Button</componentClassName>
+                <outlet>button</outlet>
+                <outletNameFromTemplate>button</outletNameFromTemplate>
+                <templateName>Menu Button</templateName>
+                <properties>
+                    <property name="-iap-box-shadow-angle-text-shadow">
+                        <real>315</real>
+                    </property>
+                    <property name="-iap-box-shadow-distance-text-shadow">
+                        <real>1</real>
+                    </property>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="-webkit-border-radius">8</property>
+                    <property name="ad-edited">true</property>
+                    <property name="ad-outlet">button</property>
+                    <property name="ad-title">Collections
+</property>
+                    <property name="ad-transitions-to-id">28EB4909-958E-4522-B6AB-473ABBD23595</property>
+                    <property name="background-image">
+                        <assetreference>83ED5E77-8B60-4A10-97BA-3F01E12E691B</assetreference>
+                    </property>
+                    <property name="background-size">400px 90px</property>
+                    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+                    <property name="border-style">solid</property>
+                    <property name="border-width">1px</property>
+                    <property name="color">#3e2e29</property>
+                    <property name="font-object">
+                        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+                    </property>
+                    <property name="font-size">28px</property>
+                    <property name="height">
+                        <real>50</real>
+                    </property>
+                    <property name="left">
+                        <real>0</real>
+                    </property>
+                    <property name="opacity">1</property>
+                    <property name="padding-bottom">0</property>
+                    <property name="padding-left">5</property>
+                    <property name="padding-right">5</property>
+                    <property name="padding-top">0</property>
+                    <property name="text-align">center</property>
+                    <property name="text-shadow">1px 1px 4px rgba(0, 0, 0, 0.5)</property>
+                    <property name="top">
+                        <real>0</real>
+                    </property>
+                    <property name="visibility">visible</property>
+                    <property name="width">100%</property>
+                </properties>
+                <properties state="ad-disabled">
+                    <property name="opacity">0.5</property>
+                </properties>
+                <properties state="ad-highlighted">
+                    <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+                </properties>
+                <actionSequencesByEvent>
+                    <dictionary>
+                        <key name="viewTouchUpInside">
+                            <actionSequenceReference>7BC63732-6967-491D-98A9-C7B0C352CBE8</actionSequenceReference>
+                        </key>
+                    </dictionary>
+                </actionSequencesByEvent>
+            </component>
+            <component internalID="E96BB2C6-C00D-4ED8-94C2-DD20C703B28E">
+                <componentClassName>iAd.Button</componentClassName>
+                <outlet>button2</outlet>
+                <outletNameFromTemplate>button</outletNameFromTemplate>
+                <templateName>Menu Button</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="-webkit-border-radius">8</property>
+                    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+                    <property name="ad-edited">true</property>
+                    <property name="ad-outlet">button2</property>
+                    <property name="ad-title">Locations
+</property>
+                    <property name="ad-transitions-to-id">F2D56308-1502-4109-8FA5-C43EEDD1ED1D</property>
+                    <property name="background-image">
+                        <assetreference>83ED5E77-8B60-4A10-97BA-3F01E12E691B</assetreference>
+                    </property>
+                    <property name="background-repeat">no-repeat</property>
+                    <property name="background-size">400px 90px</property>
+                    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+                    <property name="border-style">solid</property>
+                    <property name="border-width">1px</property>
+                    <property name="color">#3e2e29</property>
+                    <property name="font-object">
+                        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+                    </property>
+                    <property name="font-size">28px</property>
+                    <property name="height">
+                        <real>50</real>
+                    </property>
+                    <property name="left">
+                        <real>0</real>
+                    </property>
+                    <property name="opacity">1</property>
+                    <property name="padding-bottom">0</property>
+                    <property name="padding-left">5</property>
+                    <property name="padding-right">5</property>
+                    <property name="padding-top">0</property>
+                    <property name="text-align">center</property>
+                    <property name="text-shadow">1px 1px 4px rgba(0, 0, 0, 0.5)</property>
+                    <property name="top">
+                        <real>66</real>
+                    </property>
+                    <property name="visibility">visible</property>
+                    <property name="width">100%</property>
+                </properties>
+                <properties state="ad-disabled">
+                    <property name="opacity">0.5</property>
+                </properties>
+                <properties state="ad-highlighted">
+                    <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+                </properties>
+                <actionSequencesByEvent>
+                    <dictionary>
+                        <key name="viewTouchUpInside">
+                            <actionSequenceReference>4E43EC70-BBAC-4377-826A-70A7FC95132D</actionSequenceReference>
+                        </key>
+                    </dictionary>
+                </actionSequencesByEvent>
+            </component>
+            <component internalID="777FCCB5-F964-4B37-BFB7-D856C9D5E6CF">
+                <componentClassName>iAd.Button</componentClassName>
+                <outlet>button3</outlet>
+                <outletNameFromTemplate>button</outletNameFromTemplate>
+                <templateName>Menu Button</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="-webkit-border-radius">8</property>
+                    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+                    <property name="ad-edited">true</property>
+                    <property name="ad-outlet">button3</property>
+                    <property name="ad-title">Gallery
+</property>
+                    <property name="ad-transitions-to-id">E03F37A0-B361-4531-8B8F-AC905152DE0B</property>
+                    <property name="background-image">
+                        <assetreference>83ED5E77-8B60-4A10-97BA-3F01E12E691B</assetreference>
+                    </property>
+                    <property name="background-repeat">no-repeat</property>
+                    <property name="background-size">400px 90px</property>
+                    <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+                    <property name="border-style">solid</property>
+                    <property name="border-width">1px</property>
+                    <property name="color">#3e2e29</property>
+                    <property name="font-object">
+                        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+                    </property>
+                    <property name="font-size">28px</property>
+                    <property name="height">
+                        <real>50</real>
+                    </property>
+                    <property name="left">
+                        <real>0</real>
+                    </property>
+                    <property name="opacity">1</property>
+                    <property name="padding-bottom">0</property>
+                    <property name="padding-left">5</property>
+                    <property name="padding-right">5</property>
+                    <property name="padding-top">0</property>
+                    <property name="text-align">center</property>
+                    <property name="text-shadow">1px 1px 4px rgba(0, 0, 0, 0.5)</property>
+                    <property name="top">
+                        <real>132</real>
+                    </property>
+                    <property name="visibility">visible</property>
+                    <property name="width">100%</property>
+                </properties>
+                <properties state="ad-disabled">
+                    <property name="opacity">0.5</property>
+                </properties>
+                <properties state="ad-highlighted">
+                    <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+                </properties>
+                <actionSequencesByEvent>
+                    <dictionary>
+                        <key name="viewTouchUpInside">
+                            <actionSequenceReference>82C73161-3474-43C7-94DC-3BBF18EF6CDE</actionSequenceReference>
+                        </key>
+                    </dictionary>
+                </actionSequencesByEvent>
+            </component>
+        </children>
+    </component>
+    <component internalID="FECB81A1-05C8-4746-A7B1-BFB3090C378E">
+        <componentClassName>iAd.Label</componentClassName>
+        <outlet>label</outlet>
+        <outletNameFromTemplate>label</outletNameFromTemplate>
+        <templateName>Label</templateName>
+        <properties>
+            <property name="-iap-original-size">{120, 30}</property>
+            <property name="ad-number-of-lines">0</property>
+            <property name="ad-outlet">label</property>
+            <property name="ad-text">CUPCAKE AVIARY</property>
+            <property name="color">#3d4045</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue"/>
+            </property>
+            <property name="font-size">23px</property>
+            <property name="height">
+                <real>58</real>
+            </property>
+            <property name="left">
+                <real>228.5</real>
+            </property>
+            <property name="text-align">center</property>
+            <property name="top">
+                <real>385</real>
+            </property>
+            <property name="width">
+                <real>311</real>
+            </property>
+        </properties>
+        <properties state="ad-landscape">
+            <property name="height">30</property>
+            <property name="width">120</property>
+        </properties>
+        <style>
+            <stylereference>1FBD787E-A815-458F-AEDB-35FFB12C30C8</stylereference>
+        </style>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="C98EB8E9-95E3-4F23-B53D-114F72C6FD77">
+        <name>Page Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="C97D83C4-9FB7-40A2-96D9-3E28890A9C9F">
+        <name>Page Disappear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="BC2D0BCC-12EA-4AB3-BF1F-55BFACECB9AA">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="BB76B824-7E01-4CA1-887D-50AC5E685A7A">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="AE779E50-7C67-4106-83A1-4F729FD6A0F8">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="9D56D3D3-5989-4A40-82CF-5292422AFFBB" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="C2BD981D-CDEC-4608-87FB-4C2573046983">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="624B2005-9BD7-4C6A-88D1-4B700CF160CF">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="8AACC2B0-1092-4979-AA65-8A7A067518B8">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="034B190B-D6B3-4542-9206-DC21D4290101" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="EC4CD417-AAD8-4CCC-97CA-2E30A49B304C">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="A9040DEB-0BE9-4735-812D-BC3783171E96">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="6D70EA67-7282-47CA-B8D5-5FB9363655C4">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="CCDB7CCF-74DD-4AD8-8795-EEECDE1BD250" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="7BB696CD-2320-48DE-A84E-20A0D5F8294C">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="517549F7-40F8-4BD6-9B42-776893ED78C6">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="9BA84EBE-A4BE-49B7-B457-A8689476AB01">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="2A30ECE4-A0EE-4BE9-9095-1D4145D71DB2" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="7BC63732-6967-491D-98A9-C7B0C352CBE8">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="4412824A-3DAE-40E4-B175-4939F14AA279">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="6A9F913B-D25D-47DE-9969-14C4215E5DD5">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="28EB4909-958E-4522-B6AB-473ABBD23595" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="4E43EC70-BBAC-4377-826A-70A7FC95132D">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="7596DB89-51DC-48CB-B8CA-C68FA38A3FED">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="846619F8-310B-4D8B-8331-2F2379E5DC1E">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="F2D56308-1502-4109-8FA5-C43EEDD1ED1D" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="82C73161-3474-43C7-94DC-3BBF18EF6CDE">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="A36CD812-41A7-47E1-8CEA-DF324CB99030">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="7E8AAED2-2E91-479B-BF2F-5EE79E074BDD">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">
+                                                <reference representedObjectID="E03F37A0-B361-4531-8B8F-AC905152DE0B" representedObjectClassName="STPage"/>
+                                            </property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="viewControllerViewDidAppear">
+            <actionSequenceReference>C98EB8E9-95E3-4F23-B53D-114F72C6FD77</actionSequenceReference>
+        </key>
+        <key name="viewControllerViewWillDisappear">
+            <actionSequenceReference>C97D83C4-9FB7-40A2-96D9-3E28890A9C9F</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+</page>

@@ -1,0 +1,496 @@
+<page internalID="28EB4909-958E-4522-B6AB-473ABBD23595">
+<name>Page 1</name>
+<pageRole>2</pageRole>
+<contentState>3</contentState>
+<orientation>2</orientation>
+<pageClassName>iAP.ViewController</pageClassName>
+<templateName>Blank Landscape</templateName>
+<preloadSettings>YnBsaXN0MDDUAQIDBAUGcnNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QGQcIIyQlJicoKSorLC0zNDU8QkhOVFpgZmxVJG51bGzTCQoLDA0YViRjbGFzc1dOUy5rZXlzWk5TLm9iamVjdHOAD6oODxAREhMUFRYXgAKAA4AEgAWABoAHgAiACYAKgAuqGRobHB0eHyAhIoAMgBCAEYASgBOAFIAVgBaAF4AYXxAkQzhBREU5MDktNDAzRC00MDcyLUEwMTUtRkZCNkEwQUNDMUY0XxAkRjc4N0IzRTktN0IyNC00MkQwLUE1RDgtMkJDRTAyQjE2MjM5XxAkOUMxM0I2MzMtMEFGOC00QzY5LUFCQkEtOUNFREQ2NkMxOTVDXxAkNUYzRERFNzYtNDZFMy00Q0M3LUJGN0YtNjVFNEY1NzNCODNEXxAkQ0FDMTlENEYtMURFNi00MTFGLUIxRUEtOTlFQTg2MkJCRTk1XxAkMDMwOEEzNjUtMjY5NS00ODg4LUI5RjItRUEyQzlEMjg0NjE4XxAkRERBOUFCQTgtODM4My00N0Y4LTkzMjgtRjUzNkJCRDM0MDQ4XxAkMEFBM0ZBQkMtRERGMi00RTQ3LUE2RDUtMUNBMDA0Rjk4NTQ4XxAkODk1MUE5OTgtNDc1Qy00QTRFLTkwRjQtRjY1NzAwMTJFNEU4XxAkMDVCREVCNEEtNTQwQS00MjgwLUEwQ0UtREVFODdFODNEQzY00wkKCwwvMYAPoTCADaEygA5eZGVmYXVsdFNldHRpbmcI0jY3ODlaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmjODo7XE5TRGljdGlvbmFyeVhOU09iamVjdNMJCgsMPkCAD6EwgA2hMoAO0wkKCwxERoAPoTCADaEygA7TCQoLDEpMgA+hMIANoTKADtMJCgsMUFKAD6EwgA2hMoAO0wkKCwxWWIAPoTCADaEygA7TCQoLDFxegA+hMIANoTKADtMJCgsMYmSAD6EwgA2hMoAO0wkKCwxoaoAPoTCADaEygA7TCQoLDG5wgA+hMIANoTKADl8QD05TS2V5ZWRBcmNoaXZlctF0dVRyb290gAEACAARABoAIwAtADIANwBTAFkAYABnAG8AegB8AIcAiQCLAI0AjwCRAJMAlQCXAJkAmwCmAKgAqgCsAK4AsACyALQAtgC4ALoA4QEIAS8BVgF9AaQBywHyAhkCQAJHAkkCSwJNAk8CUQJgAmECZgJxAnoCkAKUAqECqgKxArMCtQK3ArkCuwLCAsQCxgLIAsoCzALTAtUC1wLZAtsC3QLkAuYC6ALqAuwC7gL1AvcC+QL7Av0C/wMGAwgDCgMMAw4DEAMXAxkDGwMdAx8DIQMoAyoDLAMuAzADMgM5AzsDPQM/A0EDQwNVA1gDXQAAAAAAAAIBAAAAAAAAAHYAAAAAAAAAAAAAAAAAAANf</preloadSettings>
+<supportedOrientations>
+    <integer>2</integer>
+</supportedOrientations>
+<properties>
+    <property name="-iap-menu-back-button-was-added">true</property>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,149,865.333</date>
+</lastModifiedDate>
+<components>
+    <component internalID="C4BD5452-8B9B-44D2-A19C-134DD49BBE12">
+        <componentClassName>iAd.Button</componentClassName>
+        <outlet>backButton</outlet>
+        <outletNameFromTemplate>backButton</outletNameFromTemplate>
+        <templateName>iPadBackButtonLandscape</templateName>
+        <properties>
+            <property name="-iap-original-size">{72, 31}</property>
+            <property name="-webkit-border-radius">15</property>
+            <property name="ad-outlet">backButton</property>
+            <property name="ad-title">Back</property>
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.5)))</property>
+            <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+            <property name="border-style">solid</property>
+            <property name="border-width">1px</property>
+            <property name="color">#3d4045</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue-Bold"/>
+            </property>
+            <property name="font-size">15px</property>
+            <property name="height">
+                <real>46</real>
+            </property>
+            <property name="left">26</property>
+            <property name="opacity">1</property>
+            <property name="padding-left">10</property>
+            <property name="padding-right">10</property>
+            <property name="text-align">center</property>
+            <property name="top">
+                <real>699</real>
+            </property>
+            <property name="width">
+                <real>141</real>
+            </property>
+        </properties>
+        <properties state="ad-disabled">
+            <property name="opacity">0.5</property>
+        </properties>
+        <properties state="ad-highlighted">
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+        </properties>
+        <style>
+            <stylereference>5629D915-5BB9-4E33-A553-5D69B96C596D</stylereference>
+        </style>
+        <actionSequencesByEvent>
+            <dictionary>
+                <key name="viewTouchUpInside">
+                    <actionSequenceReference>825A51BE-C345-43BF-A5ED-6AA25D01547C</actionSequenceReference>
+                </key>
+            </dictionary>
+        </actionSequencesByEvent>
+    </component>
+    <component internalID="08FD2807-FD37-4495-8EA7-C755F6D5DE74">
+        <componentClassName>InsideRoom</componentClassName>
+        <outlet>insideRoom</outlet>
+        <outletNameFromTemplate>insideRoom</outletNameFromTemplate>
+        <templateName>InsideRoom</templateName>
+        <properties>
+            <property name="-iap-original-size">{280, 210}</property>
+            <property name="ad-ceiling-image">
+                <assetreference>0308A365-2695-4888-B9F2-EA2C9D284618</assetreference>
+            </property>
+            <property name="ad-floor-image">
+                <assetreference>8951A998-475C-4A4E-90F4-F6570012E4E8</assetreference>
+            </property>
+            <property name="ad-friction">0.8</property>
+            <property name="ad-initial-index">0</property>
+            <property name="ad-is-mirrored-cells">false</property>
+            <property name="ad-is-wrap-around-enabled">true</property>
+            <property name="ad-orientation">horizontal</property>
+            <property name="ad-outlet">insideRoom</property>
+            <property name="height">768px</property>
+            <property name="left">
+                <real>7</real>
+            </property>
+            <property name="top">
+                <real>0</real>
+            </property>
+            <property name="width">1024px</property>
+        </properties>
+        <children>
+            <component internalID="20B72555-0C24-40F8-AA46-DFE174783BEB">
+                <componentClassName>iAd.View</componentClassName>
+                <outlet>cell</outlet>
+                <outletNameFromTemplate>cell</outletNameFromTemplate>
+                <templateName>Cell</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-outlet">cell</property>
+                </properties>
+                <children>
+                    <component internalID="9F8C0530-67FF-4134-8D8C-07AB2C4A9DED">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>9C13B633-0AF8-4C69-ABBA-9CEDD66C195C</assetreference>
+                            </property>
+                            <property name="ad-outlet">image</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">395px 400px</property>
+                            <property name="height">405px</property>
+                            <property name="left">
+                                <real>551</real>
+                            </property>
+                            <property name="top">
+                                <real>193</real>
+                            </property>
+                            <property name="width">440px</property>
+                        </properties>
+                    </component>
+                    <component internalID="4F85C071-424C-4CCC-AFDE-E2AC851037D9">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image5</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>F787B3E9-7B24-42D0-A5D8-2BCE02B16239</assetreference>
+                            </property>
+                            <property name="ad-outlet">image5</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">423px 358px</property>
+                            <property name="height">405px</property>
+                            <property name="left">39px</property>
+                            <property name="top">193px</property>
+                            <property name="width">440px</property>
+                        </properties>
+                        <properties state="ad-landscape">
+                            <property name="left">
+                                <integer>8</integer>
+                            </property>
+                            <property name="top">
+                                <integer>8</integer>
+                            </property>
+                        </properties>
+                    </component>
+                </children>
+            </component>
+            <component internalID="25BAC1BD-C688-405F-BA06-B168F756FEB5">
+                <componentClassName>iAd.View</componentClassName>
+                <outlet>cell2</outlet>
+                <outletNameFromTemplate>cell</outletNameFromTemplate>
+                <templateName>Cell</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-outlet">cell2</property>
+                </properties>
+                <children>
+                    <component internalID="73F3F22A-8384-4378-8DE9-B9A5FD0C2AA4">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image2</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>C8ADE909-403D-4072-A015-FFB6A0ACC1F4</assetreference>
+                            </property>
+                            <property name="ad-outlet">image2</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">428px 365px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>553</real>
+                            </property>
+                            <property name="top">
+                                <real>196</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                    </component>
+                    <component internalID="73CD12C8-E9BF-4903-BE7C-4BEA8F241F9B">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image6</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>05BDEB4A-540A-4280-A0CE-DEE87E83DC64</assetreference>
+                            </property>
+                            <property name="ad-outlet">image6</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">388px 367px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>39</real>
+                            </property>
+                            <property name="top">
+                                <real>193</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                        <properties state="ad-landscape">
+                            <property name="left">
+                                <integer>8</integer>
+                            </property>
+                            <property name="top">
+                                <integer>8</integer>
+                            </property>
+                        </properties>
+                    </component>
+                </children>
+            </component>
+            <component internalID="C9E921C3-683B-41B8-8F8F-035C1E9DF69C">
+                <componentClassName>iAd.View</componentClassName>
+                <outlet>cell3</outlet>
+                <outletNameFromTemplate>cell</outletNameFromTemplate>
+                <templateName>Cell</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-outlet">cell3</property>
+                </properties>
+                <children>
+                    <component internalID="89857E2D-38BE-48FA-AA22-B3934FBED2A9">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image3</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>0AA3FABC-DDF2-4E47-A6D5-1CA004F98548</assetreference>
+                            </property>
+                            <property name="ad-outlet">image3</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">364px 373px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>553</real>
+                            </property>
+                            <property name="top">
+                                <real>196</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                    </component>
+                    <component internalID="96D07610-7662-46A7-9C1C-5D79DEE482C0">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image7</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>05BDEB4A-540A-4280-A0CE-DEE87E83DC64</assetreference>
+                            </property>
+                            <property name="ad-outlet">image7</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">388px 367px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>39</real>
+                            </property>
+                            <property name="top">
+                                <real>193</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                        <properties state="ad-landscape">
+                            <property name="left">
+                                <integer>8</integer>
+                            </property>
+                            <property name="top">
+                                <integer>8</integer>
+                            </property>
+                        </properties>
+                    </component>
+                </children>
+            </component>
+            <component internalID="B3435C8D-98DF-40BB-A33B-780C36CCC82B">
+                <componentClassName>iAd.View</componentClassName>
+                <outlet>cell4</outlet>
+                <outletNameFromTemplate>cell</outletNameFromTemplate>
+                <templateName>Cell</templateName>
+                <properties>
+                    <property name="-iap-original-size">{0, 0}</property>
+                    <property name="ad-outlet">cell4</property>
+                </properties>
+                <children>
+                    <component internalID="ECC12BA2-4DF4-4B0E-83DC-FD8D263EDD7F">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image4</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>CAC19D4F-1DE6-411F-B1EA-99EA862BBE95</assetreference>
+                            </property>
+                            <property name="ad-outlet">image4</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">413px 363px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>553</real>
+                            </property>
+                            <property name="top">
+                                <real>196</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                    </component>
+                    <component internalID="ABD9162B-3B67-402C-A009-AE1F80D0CE8B">
+                        <componentClassName>iAd.ImageView</componentClassName>
+                        <outlet>image8</outlet>
+                        <outletNameFromTemplate>image</outletNameFromTemplate>
+                        <templateName>Image</templateName>
+                        <properties>
+                            <property name="-iap-aspect-ratio-locked">false</property>
+                            <property name="-iap-original-size">{0, 0}</property>
+                            <property name="ad-asset-droppable">true</property>
+                            <property name="ad-auto-sized">false</property>
+                            <property name="ad-has-hidpi-version">true</property>
+                            <property name="ad-image">
+                                <assetreference>5F3DDE76-46E3-4CC7-BF7F-65E4F573B83D</assetreference>
+                            </property>
+                            <property name="ad-outlet">image8</property>
+                            <property name="background-position">center</property>
+                            <property name="background-repeat">no-repeat</property>
+                            <property name="background-size">401px 390px</property>
+                            <property name="height">
+                                <real>405</real>
+                            </property>
+                            <property name="left">
+                                <real>39</real>
+                            </property>
+                            <property name="top">
+                                <real>193</real>
+                            </property>
+                            <property name="width">
+                                <real>440</real>
+                            </property>
+                        </properties>
+                        <properties state="ad-landscape">
+                            <property name="left">
+                                <integer>8</integer>
+                            </property>
+                            <property name="top">
+                                <integer>8</integer>
+                            </property>
+                        </properties>
+                    </component>
+                </children>
+            </component>
+        </children>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="601AF3A5-FFA9-4B85-9286-53A2216AB455">
+        <name>Page Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="04CE15A9-0840-4C54-A223-27B6734712F3">
+        <name>Page Disappear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="825A51BE-C345-43BF-A5ED-6AA25D01547C">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="63F5DEBD-8529-481E-8A61-F42330037C28">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="2CE90CB6-3936-4A11-AD71-6B15407F787F">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="asynchronous">true</property>
+                                            <property name="destinationPage">{previous-item}</property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="viewControllerViewDidAppear">
+            <actionSequenceReference>601AF3A5-FFA9-4B85-9286-53A2216AB455</actionSequenceReference>
+        </key>
+        <key name="viewControllerViewWillDisappear">
+            <actionSequenceReference>04CE15A9-0840-4C54-A223-27B6734712F3</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+</page>

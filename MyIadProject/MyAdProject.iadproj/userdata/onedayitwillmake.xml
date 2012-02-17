@@ -1,0 +1,15 @@
+<preferences>
+<deviceBandwidthLevel>2</deviceBandwidthLevel>
+<deviceOSVersion>5.0</deviceOSVersion>
+<deviceScaleFactor>1.000000</deviceScaleFactor>
+<deviceZoomLevel>1.000000</deviceZoomLevel>
+<referenceForSelectedPage>
+    <reference representedObjectID="28EB4909-958E-4522-B6AB-473ABBD23595" representedObjectClassName="STPage"/>
+</referenceForSelectedPage>
+<shouldShowRightSidebar>true</shouldShowRightSidebar>
+<visibleWorkareaViewName>kSTCanvasViewName</visibleWorkareaViewName>
+<visibleRightSidebarViewName>kSTInspectorViewName</visibleRightSidebarViewName>
+<selectedActionSequenceID>601AF3A5-FFA9-4B85-9286-53A2216AB455</selectedActionSequenceID>
+<shouldShowWarningOverlay>true</shouldShowWarningOverlay>
+<defaultBannerPageID>CB6AC055-F86B-44B4-91D0-B4A7ECB7E620</defaultBannerPageID>
+</preferences>

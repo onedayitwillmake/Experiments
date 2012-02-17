@@ -1,0 +1,149 @@
+<page internalID="05DA25EB-1C58-4939-ACB6-3D72899F7C3F">
+<name>Preroll</name>
+<pageRole>4</pageRole>
+<contentState>3</contentState>
+<orientation>1</orientation>
+<pageClassName>iAP.PrerollViewController</pageClassName>
+<templateName>Preroll</templateName>
+<supportedOrientations>
+    <integer>1</integer>
+</supportedOrientations>
+<properties>
+    <property name="autoAdvanceToNextViewController">
+        <true/>
+    </property>
+    <property name="buildInActionListShouldOccurAfterTransition">
+        <true/>
+    </property>
+    <property name="buildOutActionListShouldDelayTransition">
+        <true/>
+    </property>
+    <property name="transition">Fade</property>
+    <property name="transitionDuration">0.5</property>
+</properties>
+<lastModifiedDate>
+    <date>351,056,014.264</date>
+</lastModifiedDate>
+<components>
+    <component internalID="AF5A0F42-7EC5-457B-8628-49B541FFCE9C">
+        <componentClassName>iAP.PrerollVideoPlayer</componentClassName>
+        <outlet>video</outlet>
+        <outletNameFromTemplate>video</outletNameFromTemplate>
+        <templateName>PrerollVideo</templateName>
+        <properties>
+            <property name="ad-asset-droppable">true</property>
+            <property name="ad-has-hidpi-version">true</property>
+            <property name="ad-outlet">video</property>
+            <property name="ad-plays-fullscreen">false</property>
+            <property name="height">1024</property>
+            <property name="left">0</property>
+            <property name="top">0</property>
+            <property name="width">768</property>
+        </properties>
+    </component>
+    <component internalID="D1DF0493-B4E9-467D-9ACA-68CD25BD58D1">
+        <componentClassName>iAd.Button</componentClassName>
+        <outlet>skipButton</outlet>
+        <outletNameFromTemplate>skipButton</outletNameFromTemplate>
+        <templateName>Button</templateName>
+        <properties>
+            <property name="-webkit-border-radius">8</property>
+            <property name="ad-outlet">skipButton</property>
+            <property name="ad-title">Skip Video</property>
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.5)))</property>
+            <property name="border-color">rgba(0, 0, 0, 0.4)</property>
+            <property name="border-style">solid</property>
+            <property name="border-width">1px</property>
+            <property name="color">#3d4045</property>
+            <property name="font-object">
+                <fontreference imported="false" fontFamilyName="Helvetica Neue" fontID="HelveticaNeue-Bold"/>
+            </property>
+            <property name="font-size">18px</property>
+            <property name="height">48</property>
+            <property name="left">294</property>
+            <property name="opacity">1</property>
+            <property name="padding-bottom">0</property>
+            <property name="padding-left">5</property>
+            <property name="padding-right">5</property>
+            <property name="padding-top">0</property>
+            <property name="text-align">center</property>
+            <property name="top">910</property>
+            <property name="width">180</property>
+        </properties>
+        <properties state="ad-disabled">
+            <property name="opacity">0.5</property>
+        </properties>
+        <properties state="ad-highlighted">
+            <property name="background">-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.85)))</property>
+        </properties>
+        <actionSequencesByEvent>
+            <dictionary>
+                <key name="viewTouchUpInside">
+                    <actionSequenceReference>F6BF2054-BB1D-4142-948C-724443B505D7</actionSequenceReference>
+                </key>
+            </dictionary>
+        </actionSequencesByEvent>
+    </component>
+</components>
+<actionSequences>
+    <actionSequence internalID="F6BF2054-BB1D-4142-948C-724443B505D7">
+        <name>Go to Page</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>0</required>
+        <isWrapper>1</isWrapper>
+        <actionGroups>
+            <array>
+                <value>
+                    <actionGroup internalID="DDE2A68F-35D5-458C-8CBC-E38EE57324DC">
+                        <actions>
+                            <array>
+                                <value>
+                                    <action internalID="A5D966D8-EDAB-489A-80B3-98698FA86A01">
+                                        <actionClassName>iAP.TransitionToPageAction</actionClassName>
+                                        <actionTemplateName>Go to Page</actionTemplateName>
+                                        <properties>
+                                            <property name="destinationPage">Menu</property>
+                                        </properties>
+                                    </action>
+                                </value>
+                            </array>
+                        </actions>
+                        <delay>0.000000</delay>
+                    </actionGroup>
+                </value>
+            </array>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="22E82277-3578-449F-B250-4903796FCCC0">
+        <name>Page Appear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+    <actionSequence internalID="670B0758-2382-4D3C-B421-F1F7A6ABAE30">
+        <name>Page Disappear</name>
+        <iterationCount>1</iterationCount>
+        <animationDirectionShouldAlternate>0</animationDirectionShouldAlternate>
+        <required>1</required>
+        <isWrapper>0</isWrapper>
+        <actionGroups>
+            <array/>
+        </actionGroups>
+    </actionSequence>
+</actionSequences>
+<actionSequencesByEvent>
+    <dictionary>
+        <key name="viewControllerViewDidAppear">
+            <actionSequenceReference>22E82277-3578-449F-B250-4903796FCCC0</actionSequenceReference>
+        </key>
+        <key name="viewControllerViewWillDisappear">
+            <actionSequenceReference>670B0758-2382-4D3C-B421-F1F7A6ABAE30</actionSequenceReference>
+        </key>
+    </dictionary>
+</actionSequencesByEvent>
+</page>

@@ -1,0 +1,71 @@
+<style internalID="1FBD787E-A815-458F-AEDB-35FFB12C30C8">
+<name>CUPCAKE AVIARY</name>
+<includedAttributeKeys>
+    <key>-iap-reflection-offset</key>
+    <key>-iap-reflection-size</key>
+    <key>-iap-reflection-strength</key>
+    <key>-webkit-border-radius</key>
+    <key>-webkit-box-reflect</key>
+    <key>-webkit-box-shadow</key>
+    <key>-webkit-text-stroke-color</key>
+    <key>-webkit-text-stroke-width</key>
+    <key>ad-vertical-alignment</key>
+    <key>background</key>
+    <key>background-color</key>
+    <key>background-image</key>
+    <key>background-repeat</key>
+    <key>background-size</key>
+    <key>border-color</key>
+    <key>border-style</key>
+    <key>border-width</key>
+    <key>color</key>
+    <key>font-object</key>
+    <key>font-size</key>
+    <key>letter-spacing</key>
+    <key>line-height</key>
+    <key>opacity</key>
+    <key>text-align</key>
+    <key>text-shadow</key>
+</includedAttributeKeys>
+<properties>
+    <property name="-webkit-box-reflect">none</property>
+    <property name="-webkit-box-shadow">none</property>
+    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+    <property name="-webkit-text-stroke-width">0px</property>
+    <property name="ad-vertical-alignment">top</property>
+    <property name="background-color">rgba(0, 0, 0, 0)</property>
+    <property name="background-image">none</property>
+    <property name="background-repeat">repeat</property>
+    <property name="background-size">auto</property>
+    <property name="color">#3e2e29</property>
+    <property name="font-object">
+        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+    </property>
+    <property name="font-size">30px</property>
+    <property name="letter-spacing">normal</property>
+    <property name="line-height">normal</property>
+    <property name="opacity">1</property>
+    <property name="text-align">center</property>
+    <property name="text-shadow">none</property>
+</properties>
+<properties state="ad-landscape">
+    <property name="-webkit-box-reflect">none</property>
+    <property name="-webkit-box-shadow">none</property>
+    <property name="-webkit-text-stroke-color">rgb(62, 46, 41)</property>
+    <property name="-webkit-text-stroke-width">0px</property>
+    <property name="background-color">rgba(0, 0, 0, 0)</property>
+    <property name="background-image">none</property>
+    <property name="background-repeat">repeat</property>
+    <property name="background-size">auto</property>
+    <property name="color">#3e2e29</property>
+    <property name="font-object">
+        <fontreference imported="false" fontFamilyName="Futura" fontID="Futura-Medium"/>
+    </property>
+    <property name="font-size">30px</property>
+    <property name="letter-spacing">normal</property>
+    <property name="line-height">normal</property>
+    <property name="opacity">1</property>
+    <property name="text-align">center</property>
+    <property name="text-shadow">none</property>
+</properties>
+</style>
