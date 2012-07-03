@@ -19,7 +19,7 @@ import toxi.geom.Vec2D;
 	//			Q		R				// Linear bezier curve points Q R between above two points @ T
 	//				P					// Final point on curve - Linear bezier curve P between Q R  @ T
  * 
- * @author onedayitwillmake
+ * @author onedayitwillmake - Mario Gonzalez http://onedayitwillmake.com
  *
  */
 
