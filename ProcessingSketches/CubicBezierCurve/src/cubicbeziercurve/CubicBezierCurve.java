@@ -6,6 +6,23 @@ import processing.core.PApplet;
 import toxi.geom.Circle;
 import toxi.geom.Vec2D;
 
+/**
+ * A Cubic Bezier Curve, is a blend of 2 Quadtratic Bezier Curves
+ * A Quadtratic Bezier Curve is a blend of 2 Linear Bezier Curve
+ * A Linear Bezier Curve is a straight line along AB at time T
+ * 
+ * In a sense you can think of a Cubic Bezier Curve, as a blend of a 6 linear curves like this
+ * To give you finally a new point P, which interpolates off
+ * 
+	// A		B		C		D		// Cubic Control Points
+	//		E		F		G			// Linear bezier curve points E F G between control points @ T
+	//			Q		R				// Linear bezier curve points Q R between above two points @ T
+	//				P					// Final point on curve - Linear bezier curve P between Q R  @ T
+ * 
+ * @author onedayitwillmake
+ *
+ */
+
 
 @SuppressWarnings("serial")
 public class CubicBezierCurve extends PApplet {
