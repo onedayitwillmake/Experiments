@@ -18,7 +18,7 @@
 
 		// Work around for display bug in DAT.GUI
 		this._gui.close();
-//		this._gui.open();
+		//this._gui.open();
 	};
 	Sketch.GUIHelper.prototype = {
 		_gui					: null,

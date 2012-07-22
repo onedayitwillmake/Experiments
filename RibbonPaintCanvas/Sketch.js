@@ -28,8 +28,8 @@
 
 		// Loop
 		(function loop() {
-//			ribbonPaint.update();
-//			ribbonPaint.draw();
+			ribbonPaint.update();
+			ribbonPaint.draw();
 			window.requestAnimationFrame( loop, null );
 		})();
 	};
@@ -82,7 +82,7 @@
 		_frictionMax		: 0.92,
 		_gravity			: 0.002,
 
-		ALPHA				: 0.025,
+		ALPHA				: 0.1,
 		FADE				: true,
 		CURVES				: true,
 		ONBLACK			: true,
@@ -92,6 +92,7 @@
 			this._canvas.addEventListener('mousedown', function(e) { that.onMouseDown(e) }, false);
 			this._canvas.addEventListener('mousemove', function(e) { that.onMouseMove(e) }, false);
 			this._canvas.addEventListener('mouseup', function(e) { that.onMouseUp(e) }, false);
+
 			this._canvas.addEventListener("touchstart", that.touchHandler, true);
 			this._canvas.addEventListener("touchmove", that.touchHandler, true);
 			this._canvas.addEventListener("touchend", that.touchHandler, true);
@@ -110,10 +111,13 @@
 		 */
 		touchHandler: function( event ) {
 			var touches = event.changedTouches,
-			first = touches[0],
-			type = "";
+					first = touches[0],
+					type = "";
 
+
+			//console.log("event",)
 			event.preventDefault();
+			//return;
 			switch(event.type) {
 				case "touchstart": type = "mousedown"; break;
 				case "touchmove":  type ="mousemove"; break;
@@ -124,9 +128,9 @@
 			// Pass off as mouse event
 			var fakeMouseEvent = document.createEvent("MouseEvent");
 			fakeMouseEvent.initMouseEvent(type, true, true, window, 1,
-									  first.screenX, first.screenY,
-									  first.clientX, first.clientY, false,
-									  false, false, false, 0, null);
+					first.screenX, first.screenY,
+					first.clientX, first.clientY, false,
+					false, false, false, 0, null);
 
 			first.target.dispatchEvent(fakeMouseEvent);
 		},
@@ -184,6 +188,7 @@
 				this.clearFunction();
 			}
 
+			this.clearFunction();
 			// Darker when not drawing
 			var alpha = this._press ? Sketch.RibbonPaint.prototype.ALPHA : 0.5;
 
@@ -335,7 +340,7 @@
 							context.quadraticCurveTo(oldPosition.x, oldPosition.y,control.x, control.y);
 						}
 
-						context.strokeStyle = this.alphaFunction(i, alpha);
+						context.strokeStyle = "red";//this.alphaFunction(i, alpha);
 						context.stroke();
 
 						oldPosition.set( this.position.x + this._filaments[i].position.x, this.position.y + this._filaments[i].position.y );
