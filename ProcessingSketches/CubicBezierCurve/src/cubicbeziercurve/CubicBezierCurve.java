@@ -3,6 +3,7 @@ package cubicbeziercurve;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PVector;
 import toxi.geom.Circle;
 import toxi.geom.Vec2D;
 
@@ -107,7 +108,7 @@ public class CubicBezierCurve extends PApplet {
 		noStroke();
 		
 		// Change T over time
-		float frameAlpha = frameCount % 100;
+		float frameAlpha = frameCount/2 % 100;
 		__T = map(frameAlpha, 1, 100, 0, 1.0f);
 		
 		if( _currentDraggedPoint != null ) {
@@ -127,6 +128,19 @@ public class CubicBezierCurve extends PApplet {
 		drawLineAB( F, G );
 		
 		drawLineAB( Q, R );
+		
+		
+		Vec2D lastPosition = getP(A.getCircle(), B.getCircle(), C.getCircle(), D.getCircle(), 0.0f);
+		float iterations = 100.0f;
+		for(int i = 0; i <= iterations; ++i ) {
+			float t1 = (float)i/iterations;	
+			Vec2D currentPosition = getP(A.getCircle(), B.getCircle(), C.getCircle(), D.getCircle(), t1);
+			
+			//println( currentPosition );
+			stroke(64, 64, 64);
+			line(lastPosition.x, lastPosition.y, currentPosition.x, currentPosition.y );
+			lastPosition = currentPosition;
+		}
 		
 	}
 	
@@ -148,6 +162,31 @@ public class CubicBezierCurve extends PApplet {
 		aBlend.addSelf( bBlend );
 		
 		return aBlend;
+	}
+	
+	private Vec2D getP( Circle Apos, Circle Bpos, Circle Cpos, Circle Dpos, float t ) {
+		//￼￼￼P(t) = (s^3)A + 3(s^2*t)B + 3(s*t^2)C + (t^3)D
+		float s = 1.0f - t;
+		Vec2D P = new Vec2D(0,0);
+		
+		float aFactor = (float)Math.pow(s, 3);
+		Vec2D A1 = Apos.copy().scale(aFactor);
+		
+		float bFactor = 3.0f*((float)Math.pow(s,2)*t);
+		Vec2D B1 = Bpos.copy().scale(bFactor);
+		
+		float cFactor = (float) (3.0f*(s*Math.pow(t,2)));
+		Vec2D C1 = Cpos.copy().scale(cFactor);
+		
+		float dFactor = (float)Math.pow(t,3);
+		Vec2D D1 = Dpos.copy().scale( dFactor );
+		
+		P.addSelf(A1);
+		P.addSelf(B1);
+		P.addSelf(C1);
+		P.addSelf(D1);
+		
+		return P;
 	}
 
 
