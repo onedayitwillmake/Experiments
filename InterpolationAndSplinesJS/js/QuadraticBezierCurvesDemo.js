@@ -25,8 +25,8 @@ var demo = Sketch.create({
         this._bezier.B = this.createAndAddRandomPoint(10);
         this._bezier.C = this.createAndAddRandomPoint(10);
 
-        this._linearBezierPointAB = this.createControlPointAtXY( this._bezier.A.getPosition().x, this._bezier.A.getPosition().x, 5 );
-        this._linearBezierPointBC = this.createControlPointAtXY( this._bezier.B.getPosition().x, this._bezier.B.getPosition().x, 5 );
+        this._linearBezierPointAB = this.createControlPointAtXY( this._bezier.A.getPos().x, this._bezier.A.getPos().x, 5 );
+        this._linearBezierPointBC = this.createControlPointAtXY( this._bezier.B.getPos().x, this._bezier.B.getPos().x, 5 );
 
         var gui = new dat.GUI();
         gui.add(this, '_T', 0, 1).name("T");
@@ -73,23 +73,23 @@ var demo = Sketch.create({
         demo.lineWidth = 0.25;
 
         // Draw lines between AB and BC
-        this.drawLine( ctx, this._bezier.A.getColor(), this._bezier.A.getPosition(), this._bezier.C.getPosition() );
-        this.drawLine( ctx, this._bezier.C.getColor(), this._bezier.C.getPosition(), this._bezier.B.getPosition() );
+        this.drawLine( ctx, this._bezier.A.getColor(), this._bezier.A.getPos(), this._bezier.C.getPos() );
+        this.drawLine( ctx, this._bezier.C.getColor(), this._bezier.C.getPos(), this._bezier.B.getPos() );
 
         // Show the correlation between the simple LinearBezierCurve AC
-        var linearAB = this.getLinearBezierAB( this._bezier.A.getPosition(), this._bezier.C.getPosition(), this._T );
-        this._linearBezierPointAB.setPosition( linearAB );
+        var linearAB = this.getLinearBezierAB( this._bezier.A.getPos(), this._bezier.C.getPos(), this._T );
+        this._linearBezierPointAB.setPos( linearAB );
 
         // Show the correlation between the simple LinearBezierCurve BC
-        var linearBC = this.getLinearBezierAB(this._bezier.C.getPosition(), this._bezier.B.getPosition(), this._T );
-        this._linearBezierPointBC.setPosition( this.getLinearBezierAB(this._bezier.C.getPosition(), this._bezier.B.getPosition(), this._T ) );
+        var linearBC = this.getLinearBezierAB(this._bezier.C.getPos(), this._bezier.B.getPos(), this._T );
+        this._linearBezierPointBC.setPos( this.getLinearBezierAB(this._bezier.C.getPos(), this._bezier.B.getPos(), this._T ) );
 
         // Draw a line between them to show that it is the tangent of the quadtratic curve
         this.drawLine( ctx, "#FFFFFF", linearAB, linearBC );
 
 
         // Draw the point at T
-        var cpos = this.getQuadraticBezierABC(this._bezier.A.getPosition(), this._bezier.B.getPosition(), this._bezier.C.getPosition(), this._T );
+        var cpos = this.getQuadraticBezierABC(this._bezier.A.getPos(), this._bezier.B.getPos(), this._bezier.C.getPos(), this._T );
         var c = new Curves.ControlPoint(cpos.x, cpos.y, null);
         c._color = Curves.ControlPoint.prototype.COLOURS[0];
         c.draw( ctx );
@@ -97,8 +97,8 @@ var demo = Sketch.create({
         // Draw the Quadtratic curve using canvas
         demo.lineWidth = 1;
         demo.beginPath();
-        demo.moveTo(this._bezier.A.getPosition().x, this._bezier.A.getPosition().y);
-        demo.quadraticCurveTo(this._bezier.C.getPosition().x, this._bezier.C.getPosition().y, this._bezier.B.getPosition().x, this._bezier.B.getPosition().y );
+        demo.moveTo(this._bezier.A.getPos().x, this._bezier.A.getPos().y);
+        demo.quadraticCurveTo(this._bezier.C.getPos().x, this._bezier.C.getPos().y, this._bezier.B.getPos().x, this._bezier.B.getPos().y );
         demo.stroke();
 
 

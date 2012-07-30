@@ -18,7 +18,7 @@ var demo = Sketch.create({
 
         this._points = [];
         this._bezier = {};
-        this._T = 0.0;
+        this._T = 0.5;
         this._currentlyDraggedPoint = null;
 
         this._bezier.A = this.createAndAddRandomPoint(10);
@@ -69,10 +69,13 @@ var demo = Sketch.create({
             this._points[i].draw( ctx )
         }
 
-        var cpos = this.getLinearBezierAB(this._bezier.A.getPosition(), this._bezier.B.getPosition(), this._T );
+        var cpos = this.getLinearBezierAB(this._bezier.A.getPos(), this._bezier.B.getPos(), this._T );
         var c = new Curves.ControlPoint(cpos.x, cpos.y, null);
         c._color = Curves.ControlPoint.prototype.COLOURS[0];
         c.draw( ctx );
+
+
+        this.drawLine( ctx, this._bezier.A.getColor(), this._bezier.A.getPos(), this._bezier.B.getPos() )
 	},
 
     /**
@@ -82,37 +85,31 @@ var demo = Sketch.create({
      * @param t
      * @return {*}
      */
-    getLinearBezierAB: function( p0, p1, t ) {
+    getLinearBezierAB: function( A, B, t ) {
         var s = 1.0 - t;
+        var x = ( A.x * s ) + (B.x * t);
+        var y = ( A.y * s ) + (B.y * t );
 
-        var aBlend = p0.copy();
-        aBlend.scaleSelf( s );
-
-        var bBlend = p1.copy();
-        bBlend.scaleSelf( t );
-
-        aBlend.addSelf( bBlend );
-
-        return aBlend;
+        return new toxi.geom.Vec2D(x,y);
     },
 
     /**
-     * Gets point P at time T for a Quadratic Bezier Curve ABC
-     * @param p0
-     * @param p1
-     * @param p2
-     * @param t
-     * @return {toxi.geom.Vec2D}
+     * Draws a line between two points, and sets the color back after
+     * @param ctx
+     * @param color
+     * @param start
+     * @param end
      */
-    getQuadraticBezierABC: function( p0, p1, p2, t ) {
-        var s = 1.0 - t;
-        var s2 = s*s;
-        var t2 = t*t;
+    drawLine: function( ctx, color, start, end ) {
+        var oldColor = demo.strokeStyle;
 
-        var x = s2*p0.x + (2*(s*t))*p2.x + t2*p1.x;
-        var y = s2*p0.y + (2*(s*t))*p2.y + t2*p1.y;
+        demo.strokeStyle = color;
+        demo.beginPath();
+        demo.moveTo(start.x, start.y);
+        demo.lineTo(end.x, end.y);
+        demo.stroke();
 
-        return new toxi.geom.Vec2D(x,y);
+        demo.strokeStyle = oldColor;
     },
 
 

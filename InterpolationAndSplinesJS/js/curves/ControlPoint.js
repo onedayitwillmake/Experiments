@@ -39,8 +39,8 @@ window.namespace("Curves");
         },
 
     ///// ACCESSORS
-        getPosition: function(){ return this._circle; },
-        setPosition: function( aPosition ) { this._circle.x = aPosition.x; this._circle.y = aPosition.y },
+        getPos: function(){ return this._circle; },
+        setPos: function( aPosition ) { this._circle.x = aPosition.x; this._circle.y = aPosition.y },
 
         getColor: function(){ return this._color; },
         setColor: function( aColor ){ this._color = aColor; },

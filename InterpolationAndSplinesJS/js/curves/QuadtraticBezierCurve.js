@@ -1,5 +1,5 @@
 /**
- *  A ControlPoint along a curve
+ *  Quadtratic Bezier Curve is just a blend of two Linear Bezier Curves
  */
 window.namespace("Curves");
 
@@ -9,12 +9,12 @@ window.namespace("Curves");
         this._B = B;
         this._C = C;
 
-        this._solvedP = new Curves.ControlPoint(this._A.getPosition().x, this._A.getPosition().y, this._A.getRadius() * 0.5);
+        this._solvedP = new Curves.ControlPoint(this._A.getPos().x, this._A.getPos().y, this._A.getRadius() * 0.5);
 
-        this._pointAB = new Curves.ControlPoint( this._A.getPosition().x, this._A.getPosition().x, this._A.getRadius() * 0.3 );
+        this._pointAB = new Curves.ControlPoint( this._A.getPos().x, this._A.getPos().x, this._A.getRadius() * 0.3 );
         this._pointAB.setColor = this._A.getColor();
 
-        this._pointBC = new Curves.ControlPoint( this._B.getPosition().x, this._B.getPosition().x, this._A.getRadius() * 0.3 );
+        this._pointBC = new Curves.ControlPoint( this._B.getPos().x, this._B.getPos().x, this._A.getRadius() * 0.3 );
         this._pointBC.setColor = this._B.getColor();
     };
 
@@ -42,7 +42,7 @@ window.namespace("Curves");
 
         evaluateAt: function( t ) {
             this._t = t;
-            this._solvedP.setPosition( this.getQuadraticBezierABC( this._A.getPosition(), this._B.getPosition(), this._C.getPosition(), this._t ) );
+            this._solvedP.setPos( this.getQuadraticBezierABC( this._A.getPos(), this._B.getPos(), this._C.getPos(), this._t ) );
         },
 
         /**
@@ -54,8 +54,8 @@ window.namespace("Curves");
             demo.strokeStyle = this._A.getColor();
             demo.lineWidth = 0.75;
             demo.beginPath();
-            demo.moveTo(this._A.getPosition().x, this._A.getPosition().y);
-            demo.quadraticCurveTo(this._B.getPosition().x, this._B.getPosition().y, this._C.getPosition().x, this._C.getPosition().y );
+            demo.moveTo(this._A.getPos().x, this._A.getPos().y);
+            demo.quadraticCurveTo(this._B.getPos().x, this._B.getPos().y, this._C.getPos().x, this._C.getPos().y );
             demo.stroke();
 
             demo.lineWidth = 0.5;
@@ -65,22 +65,22 @@ window.namespace("Curves");
 
 
             // Draw relationship between the simple Linear Bezier Curve AB
-            this._pointAB.setPosition( this.solveLinear( this._A.getPosition(), this._B.getPosition(), this._t ) );
+            this._pointAB.setPos( this.solveLinear( this._A.getPos(), this._B.getPos(), this._t ) );
             this._pointAB.draw( ctx );
 
             // Draw relationship between the simple Linear Bezier Curve BC
-            this._pointBC.setPosition( this.solveLinear( this._B.getPosition(), this._C.getPosition(), this._t ) );
+            this._pointBC.setPos( this.solveLinear( this._B.getPos(), this._C.getPos(), this._t ) );
             this._pointBC.draw( ctx );
 
             // Draw a line between them to show that it is the tangent of the quadtratic curve
             if( this._t > 0 && this._t < 1)
-            this.drawLine( ctx, "#FF0000", this._pointAB.getPosition(), this._pointBC.getPosition() );
+            this.drawLine( ctx, "#FF0000", this._pointAB.getPos(), this._pointBC.getPos() );
 
 
             // Draw lines between the two knots
             demo.lineWidth = 0.25;
-            this.drawLine( ctx, "#FFFFFF", this._A.getPosition(), this._B.getPosition() );
-            this.drawLine( ctx, "#FFFFFF", this._B.getPosition(), this._C.getPosition() );
+            this.drawLine( ctx, "#FFFFFF", this._A.getPos(), this._B.getPos() );
+            this.drawLine( ctx, "#FFFFFF", this._B.getPos(), this._C.getPos() );
 
         },
 
@@ -128,12 +128,6 @@ window.namespace("Curves");
             var y = ( A.y * s ) + (B.y * t );
 
             return new toxi.geom.Vec2D(x,y);
-        },
-
-    ///// ACCESSORS
-        getPosition: function(){ return this._circle; },
-        containsPoint: function(p){ return this._circle.containsPoint(p); }
-    }
-
-    var proto = Curves.ControlPoint.prototype;
+        }
+    };
 })();
