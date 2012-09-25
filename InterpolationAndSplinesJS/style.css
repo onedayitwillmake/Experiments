@@ -5,12 +5,11 @@ html, body {
 }
 
 #info {
-    position: absolute;
+     position: absolute;
+    padding: 12px 10px;
+    margin-bottom: 1px;
     left: 10px;
     top: 10px;
-}
-
-#info {
     background: rgba(0,0,0,0.8);
     padding: 12px 10px;
     margin-bottom: 1px;
