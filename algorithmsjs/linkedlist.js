@@ -15,9 +15,22 @@ LinkedList.prototype.append = function( node ) {
 }
 
 LinkedList.prototype.reverse = function (){
-	var temp = null;
-	var prev = null;
+	var previous = null;
 
+	while( this.head ) {
+		var next = this.head.next;
+		this.head.next = previous;
+		previous = this.head;
+
+		this.head = next;
+	}
+
+	this.head = previous;
+}
+
+LinkedList.prototype.reverse = function (){
+	var temp = null;
+	var prev = null
 	while( this.head ) {
 		temp = this.head.next;
 		this.head.next = prev;
@@ -27,6 +40,7 @@ LinkedList.prototype.reverse = function (){
 
 	this.head = prev;
 }
+
 
 LinkedList.prototype.reverseRecursive = function( head, temp, prev ) {
 	temp = this.head.next;
